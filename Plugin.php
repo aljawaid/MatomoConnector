@@ -4,7 +4,6 @@ namespace Kanboard\Plugin\MatomoAnalytics;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
-// use Kanboard\Plugin\PluginNameExampleStudlyCaps\AgeHelper;  // Helper Class and Filename should be exact
 
 class Plugin extends Base
 {
@@ -18,8 +17,10 @@ class Plugin extends Base
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
         $this->template->hook->attach('template:layout:head', 'matomoAnalytics:layout/head');
         $this->template->hook->attach('template:layout:bottom', 'matomoAnalytics:layout/bottom');
-        $this->template->hook->attach('template:config:application', 'matomoAnalytics:config/settings');
+        $this->template->hook->attach('template:config:sidebar', 'matomoAnalytics:config/sidebar');
 
+        // MATOMO SETTINGS Page - Routes
+        $this->route->addRoute('/settings/matomo', 'MatomoAnalyticsController', 'show', 'MatomoAnalytics');
     }
 
     public function onStartup()
