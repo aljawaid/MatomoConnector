@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\PluginNameExampleStudlyCaps;
+namespace Kanboard\Plugin\MatomoAnalytics;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
@@ -10,29 +10,16 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        // Template Override
-        //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
-        $this->template->setTemplateOverride('action/index', 'pluginNameExampleCamelCase:action/index');
-
         // CSS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:css', array('template' => 'plugins/PluginNameExampleStudlyCaps/Assets/css/plugin-name.css'));
-
-        // JS - Asset Hook
-        //  - Keep filename lowercase
-        $this->hook->on('template:layout:js', array('template' => 'plugins/PluginNameExampleStudlyCaps/Assets/js/plugin-name.js'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/MatomoAnalytics/Assets/css/matomo-analytics.css'));
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
-        $this->template->hook->attach('template:project-header:view-switcher-before-project-overview', 'pluginNameExampleCamelCase:project_header/actions');
+        $this->template->hook->attach('template:layout:head', 'matomoAnalytics:layout/head');
+        $this->template->hook->attach('template:layout:bottom', 'matomoAnalytics:layout/bottom');
+        $this->template->hook->attach('template:config:application', 'matomoAnalytics:config/settings');
 
-        // Extra Page - Routes
-        //  - Example: $this->route->addRoute('/my/custom/route', 'myController', 'myAction', 'myplugin');
-        $this->route->addRoute('/settings/support', 'TechnicalSupportController', 'show', 'KanboardSupport');
-
-        // Helper
-        //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
-        $this->helper->register(' ', '\Kanboard\Plugin\  \Helper\  ');
     }
 
     public function onStartup()
@@ -43,12 +30,12 @@ class Plugin extends Base
     public function getPluginName()
     {
         // Plugin Name MUST be identical to namespace for Plugin Directory to detect updated versions
-        return 'PluginNameExampleStudlyCaps';
+        return 'MatomoAnalytics';
     }
 
     public function getPluginDescription()
     {
-        return t('description text');
+        return t('Connect your Kanboard instance to Matomo Ananlytics to track visitors to your site.');
     }
 
     public function getPluginAuthor()
@@ -72,6 +59,6 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/aljawaid/url';
+        return 'https://github.com/aljawaid/MatomoAnalytics';
     }
 }
