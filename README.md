@@ -7,9 +7,15 @@
 
 Features
 -------------
-
-- main features list 
-- main features list
+**Apache Version - Cloaking**
+**General Version**
+**Tracking Code**
+- 
+**JavaScript Disabled Fallback Code**
+- 
+**Image Tracking Code**
+- Use adblocker workaround
+- Track Page Name (optional)
 
 
 Screenshots
@@ -23,7 +29,7 @@ Screenshots
 Usage
 -------------
 
-Go to `Settings` &#10562;
+Go to `Settings` &#10562; Application Settings
 
 
 Compatibility
