@@ -12,7 +12,7 @@ use Kanboard\Core\Plugin\Directory;
  * 
  */
 
-class MatomoAnalyticsController extends \Kanboard\Controller\PluginController
+class MatomoAnalyticsController extends \Kanboard\Controller\ConfigController
 {
     /**
      * Display the Settings Page
@@ -22,8 +22,8 @@ class MatomoAnalyticsController extends \Kanboard\Controller\PluginController
 
     public function show()
     {
-        $this->response->html($this->helper->layout->plugin('matomoAnalytics:config/settings', array(
-            'title' => t('Matomo Analytics').' &#10562; '.t('Settings'),
+        $this->response->html($this->helper->layout->config('matomoAnalytics:config/settings', array(
+            'title' => 'MatomoAnalytics &#10562; '.t('Settings'),
         )));
     }
 }
