@@ -40,4 +40,15 @@
             <p class="form-help w-200"><?= t('This label is not used on the icon') ?></p>
         </div>
     </fieldset>
+    <footer class="matomo-plugin-version">
+        <?php
+        $pluginVersion = Kanboard\Plugin\MatomoAnalytics\Plugin::getPluginVersion($plugin);
+        $pluginName = Kanboard\Plugin\MatomoAnalytics\Plugin::getPluginName($plugin);
+        $pluginHomepage = Kanboard\Plugin\MatomoAnalytics\Plugin::getPluginHomepage($plugin);
+        ?>
+        <a href="<?= $pluginHomepage ?>" class="" target="_blank" rel="noreferrer noopener" title="<?= t('Opens in a new window') ?>">
+            <?= $pluginName ?>
+        </a> Plugin
+        <span>v<?= $pluginVersion ?></span>
+    </footer>
 </div>

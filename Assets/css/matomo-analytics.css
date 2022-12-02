@@ -51,3 +51,25 @@ a:hover { color: var(--pp-red-alt-2) !important; }
 .text-center { text-align: center; }
 
 .relative { position: relative; }
+
+.matomo-plugin-version {
+    display: block;
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.matomo-plugin-version a {
+    font-weight: 600;
+}
+
+.matomo-plugin-version span {
+    background-color: var(--pp-green-dark);
+    padding: 1px 4px 1px 4px;
+    color: var(--pp-white);
+    border-radius: var(--border-radius);
+    font-family: monospace;
+    margin-left: 3px;
+    font-size: 1em;
+    cursor: context-menu;
+}
