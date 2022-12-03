@@ -1,6 +1,6 @@
 <div class="matomo-page-header">
     <h2 class="">
-        <img src="/plugins/MatomoAnalytics/Assets/matomo-logo.svg" alt="Matomo logo">
+        <img src="/plugins/MatomoAnalytics/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
     </h2>
 </div>
 <div class="page-margin">
@@ -16,7 +16,7 @@
             <div class="">
                 <?= $this->form->label(t('Matomo Admin Interface'), 'matomo_admin_url', array('class="w-600"')) ?>
                 <?= $this->form->input('url', 'matomo_admin_url', $values, $errors, array('placeholder="https://analytics.mydomain.com"', 'required'), 'w-600') ?>
-                <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface. A link to your interface will show after saving this page.') ?></p>
+                <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface') ?></p>
             </div>
             <div class="matomo-buttons">
                 <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
@@ -37,12 +37,12 @@
             <div class="">
                 <?= $this->form->label(t('Track Across All Subdomains'), 'domain', array('class="w-200"')) ?>
                 <?= $this->form->text('domain', $values, $errors, array('placeholder="'. t('Enter your domain') .'"')) ?>
-                <p class="form-help"><?= t('Your Kanboard domain should be') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
+                <p class="form-help"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
             <div class="">
                 <?= $this->form->label(t('Site ID'), 'site_id', array('class=""')) ?>
                 <?= $this->form->number('site_id', $values, $errors, array('placeholder="5"', 'required')) ?>
-                <p class="form-help"><?= t('This label is needed to identifiy your site. Bad requests in the browser console are usually the result of an incorrect Site ID') ?></p>
+                <p class="form-help"><?= t('Bad requests in the browser console are usually the result of an incorrect Site ID') ?></p>
             </div>
         </fieldset>
 
@@ -60,15 +60,15 @@
                     <?= $this->form->radio('image_tracking', t('Disable image tracking'), 'disable_image_tracking', isset($values['image_tracking']) && $values['image_tracking'] == 'disable_image_tracking') ?>
                 </li>
             </ul>
-            <p class="form-help matomo-form-help"><?= t('When using this option as a fallback for JavaScript tracking, the same code is surrounded in') ?> <code><?= htmlentities('<noscript></noscript>') ?></code> <?= t('HTML tags.') ?></p>
+            <p class="form-help matomo-form-help"><?= t('When using this option as a fallback for JavaScript tracking, the same code will be surrounded in') ?> <code><?= htmlentities('<noscript></noscript>') ?></code> <?= t('HTML tags') ?></p>
             <div class="">
                 <?= $this->form->label(t('Page Name'), 'website_page_name', array('class="optional-label"')) ?>
                 <?= $this->form->text('website_page_name', $values, $errors, array('placeholder="'. t('My Kanboard Instance') .'"')) ?>
-                <p class="form-help"><?= t('This is the title of the action being tracked. It is possible to use slashes / to set one or several categories for this action. For example, Help / Feedback will create the Action Feedback in the category Help.') ?></p>
+                <p class="form-help"><?= t('This is the title of the action being tracked') ?></p>
             </div>
         </fieldset>
         <div class="form-actions">
-            <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
+            <button type="submit" class="btn btn-blue"><?= t('Save Settings') ?></button>
         </div>
     </form>
     <footer class="matomo-plugin-version">
