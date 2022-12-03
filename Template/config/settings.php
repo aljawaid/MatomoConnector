@@ -79,7 +79,7 @@
         ?>
         <a href="<?= $pluginHomepage ?>" class="" target="_blank" rel="noreferrer noopener" title="<?= t('Opens in a new window') ?>">
             <?= $pluginName ?>
-        </a> <?= t('Plugin') ?>
+        </a> <?= t('Connector') ?>
         <span>v<?= $pluginVersion ?></span>
     </footer>
 </div>

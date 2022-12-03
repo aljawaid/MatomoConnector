@@ -53,7 +53,7 @@ return array(
   'My Kanboard Instance' => '',
   'This is the title of the action being tracked' => '',
   'Save Settings' => '',
-  '' => '',
+  'Connector' => 'Connector',
   '' => '',
   '' => '',
   '' => '',
