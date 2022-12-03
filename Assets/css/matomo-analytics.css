@@ -78,3 +78,24 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     font-size: 1em;
     cursor: context-menu;
 }
+
+.matomo-form input[type="url"], .matomo-form input[type="number"], .matomo-form input[type="text"]:not(.input-addon-field) {
+    /*color: var(--color-light);*/
+    border: 1px solid var(--blue-border-gradient-match);
+    /*width: 300px;*/
+    max-width: 95%;
+    font-size: 1em;
+    height: 25px;
+    padding-bottom: 0;
+    padding-left: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: var(--border-radius);
+
+}
+
+.matomo-form input[type="url"]:focus, .matomo-form input[type="number"]:focus, .matomo-form input[type="text"]:focus:not(.input-addon-field) {
+    accent-color: var(--pp-red-alt-2);
+    outline: 0;
+    box-shadow: 0 0 8px var(--blue-icon-dark);
+}
