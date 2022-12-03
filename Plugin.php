@@ -4,6 +4,7 @@ namespace Kanboard\Plugin\MatomoAnalytics;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
+use Kanboard\Helper;
 
 class Plugin extends Base
 {
