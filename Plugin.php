@@ -19,6 +19,7 @@ class Plugin extends Base
         $this->template->hook->attach('template:layout:head', 'matomoAnalytics:layout/head');
         $this->template->hook->attach('template:layout:bottom', 'matomoAnalytics:layout/bottom');
         $this->template->hook->attach('template:config:sidebar', 'matomoAnalytics:config/sidebar');
+        $this->template->hook->attach('template:config:integrations', 'matomoAnalytics:config/integrations');
 
         // MATOMO SETTINGS Page - Routes
         $this->route->addRoute('/settings/matomo', 'MatomoAnalyticsController', 'show', 'MatomoAnalytics');

@@ -99,3 +99,11 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     outline: 0;
     box-shadow: 0 0 8px var(--blue-icon-dark);
 }
+
+.matomo-connector a img {
+    width: 100px;
+}
+
+.matomo-connector a {
+    font-size: 1em;
+}
