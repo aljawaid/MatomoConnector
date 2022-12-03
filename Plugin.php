@@ -37,7 +37,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Connect your Kanboard instance to Matomo Ananlytics to track visitors to your site.');
+        return t('Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.');
     }
 
     public function getPluginAuthor()
