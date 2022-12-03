@@ -38,7 +38,7 @@
 .pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
 .pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
 
-div, a, details, summary, i, img, table, tr, .btn-uninstall, svg, .sidebar > ul li, figure {
+div, a, details, summary, i, img, table, tr, .btn-uninstall, svg, .sidebar > ul li, figure, button {
     transition: ease-in-out all .3s;
 }
 
@@ -79,6 +79,26 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     cursor: context-menu;
 }
 
+.matomo-image-tracking ul {
+    display: flex;
+}
+
+.matomo-image-tracking ul li {
+    list-style-type: none;
+    display: inline-flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.matomo-image-tracking .matomo-form-help {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.w-600 {
+    width: 600px;
+}
+
 .matomo-form input[type="url"], .matomo-form input[type="number"], .matomo-form input[type="text"]:not(.input-addon-field) {
     /*color: var(--color-light);*/
     border: 1px solid var(--blue-border-gradient-match);
@@ -100,10 +120,39 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     box-shadow: 0 0 8px var(--blue-icon-dark);
 }
 
+.matomo-buttons a {
+    font-size: 1em;
+    border-color: var(--blue-border-gradient-match);
+    border-radius: var(--border-radius);
+    margin-right: 10px;
+}
+
+.matomo-form .form-actions .btn {
+    border-radius: var(--border-radius);
+}
 .matomo-connector a img {
     width: 100px;
 }
 
 .matomo-connector a {
     font-size: 1em;
+}
+
+.optional {
+    font-size: .8em;
+    font-style: italic;
+    margin-left: 5px;
+    color: var(--pp-grey);
+}
+
+.optional-label:after {
+    content: 'Optional';
+    font-size: .8em;
+    font-style: italic;
+    margin-left: 5px;
+    color: var(--pp-grey);
+}
+
+.matomo-admin-interface legend, .matomo-tracking legend, .matomo-image-tracking legend {
+    font-weight: 600;
 }
