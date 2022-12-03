@@ -8,9 +8,10 @@ Connect your Kanboard instance to Matomo Analytics to track visitors to your sit
 Features
 -------------
 **Matomo Tracking Code**
-- Add button to Matomo Admin Interface
-- Track Across All Subdomains
-- Apache Version Code as workaround for adblockers - Cloaking
+- Add login button to the Matomo Admin Interface
+- Track across all subdomains
+- Apache version for cloaking _(as workaround for adblockers)_
+
 **Image Tracking Code**
 - Use as fallback for disabled JavaScript
 - Track Page Name (optional)
