@@ -61,6 +61,7 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     font-size: 0.9em;
     text-align: center;
     margin-top: 3em;
+    margin-bottom: 1.1em;
 }
 
 .matomo-plugin-version a {
