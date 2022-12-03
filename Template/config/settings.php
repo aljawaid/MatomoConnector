@@ -1,10 +1,10 @@
 <div class="matomo-page-header">
     <h2 class="">
-        <img src="/plugins/MatomoAnalytics/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
+        <img src="/plugins/MatomoConnector/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
     </h2>
 </div>
 <div class="page-margin">
-    <form class="matomo-form panel" method="post" action="<?= $this->url->href('MatomoAnalyticsController', 'save', array('redirect' => 'show', 'plugin' => 'MatomoAnalytics')) ?>" autocomplete="off">
+    <form class="matomo-form panel" method="post" action="<?= $this->url->href('MatomoConnectorController', 'save', array('redirect' => 'show', 'plugin' => 'MatomoConnector')) ?>" autocomplete="off">
     <?= $this->form->csrf() ?>
         <fieldset class="matomo-admin-interface">
             <legend><?= t('Admin Interface') ?></legend>
@@ -21,14 +21,14 @@
             <div class="matomo-buttons">
                 <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
                     <a href="<?= $this->task->configModel->get('matomo_admin_url', '') ?>" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                        <img src="/plugins/MatomoAnalytics/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Matomo Admin Login') ?>
+                        <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Matomo Admin Login') ?>
                     </a>
                 <?php endif ?>
                 <a href="https://matomo.org/guides" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                    <img src="/plugins/MatomoAnalytics/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Knowledge Base') ?>
+                    <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Knowledge Base') ?>
                 </a>
                 <a href="https://forum.matomo.org" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                    <img src="/plugins/MatomoAnalytics/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Community Forum') ?>
+                    <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Community Forum') ?>
                 </a>
             </div>
         </fieldset>
@@ -73,9 +73,9 @@
     </form>
     <footer class="matomo-plugin-version">
         <?php
-        $pluginVersion = Kanboard\Plugin\MatomoAnalytics\Plugin::getPluginVersion($plugin);
-        $pluginName = Kanboard\Plugin\MatomoAnalytics\Plugin::getPluginName($plugin);
-        $pluginHomepage = Kanboard\Plugin\MatomoAnalytics\Plugin::getPluginHomepage($plugin);
+        $pluginVersion = Kanboard\Plugin\MatomoConnector\Plugin::getPluginVersion($plugin);
+        $pluginName = Kanboard\Plugin\MatomoConnector\Plugin::getPluginName($plugin);
+        $pluginHomepage = Kanboard\Plugin\MatomoConnector\Plugin::getPluginHomepage($plugin);
         ?>
         <a href="<?= $pluginHomepage ?>" class="" target="_blank" rel="noreferrer noopener" title="<?= t('Opens in a new window') ?>">
             <?= $pluginName ?>

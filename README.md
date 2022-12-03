@@ -1,4 +1,4 @@
-# MatomoAnalytics
+# MatomoConnector
 
 #### _Plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
 
@@ -9,6 +9,7 @@ Features
 -------------
 **Matomo Tracking Code**
 - Add button to Matomo Admin Interface
+- Track Across All Subdomains
 - Apache Version Code as workaround for adblockers - Cloaking
 **Image Tracking Code**
 - Use as fallback for disabled JavaScript
@@ -26,8 +27,11 @@ Screenshots
 Usage
 -------------
 
-Go to `Settings` &#10562; MatomoAnalytics
+Go to `Settings` &#10562; MatomoConnector
 
+**_or_**
+
+Go to `Settings` &#10562; Integrations
 
 Compatibility
 -------------

@@ -1,3 +1,3 @@
-<li <?= $this->app->checkMenuSelection('MatomoAnalyticsController', 'show', 'MatomoAnalytics') ?>>
-    <?= $this->url->link('MatomoAnalytics', 'MatomoAnalyticsController', 'show', ['plugin' => 'MatomoAnalytics']) ?>
+<li <?= $this->app->checkMenuSelection('MatomoConnectorController', 'show', 'MatomoConnector') ?>>
+    <?= $this->url->link('MatomoConnector', 'MatomoConnectorController', 'show', ['plugin' => 'MatomoConnector']) ?>
 </li>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\MatomoAnalytics;
+namespace Kanboard\Plugin\MatomoConnector;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
@@ -12,17 +12,17 @@ class Plugin extends Base
     {
         // CSS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:css', array('template' => 'plugins/MatomoAnalytics/Assets/css/matomo-analytics.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/MatomoConnector/Assets/css/matomo-analytics.css'));
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
-        $this->template->hook->attach('template:layout:head', 'matomoAnalytics:layout/head');
-        $this->template->hook->attach('template:layout:bottom', 'matomoAnalytics:layout/bottom');
-        $this->template->hook->attach('template:config:sidebar', 'matomoAnalytics:config/sidebar');
-        $this->template->hook->attach('template:config:integrations', 'matomoAnalytics:config/integrations');
+        $this->template->hook->attach('template:layout:head', 'MatomoConnector:layout/head');
+        $this->template->hook->attach('template:layout:bottom', 'MatomoConnector:layout/bottom');
+        $this->template->hook->attach('template:config:sidebar', 'MatomoConnector:config/sidebar');
+        $this->template->hook->attach('template:config:integrations', 'MatomoConnector:config/integrations');
 
         // MATOMO SETTINGS Page - Routes
-        $this->route->addRoute('/settings/matomo', 'MatomoAnalyticsController', 'show', 'MatomoAnalytics');
+        $this->route->addRoute('/settings/matomo', 'MatomoConnectorController', 'show', 'MatomoConnector');
     }
 
     public function onStartup()
@@ -33,7 +33,7 @@ class Plugin extends Base
     public function getPluginName()
     {
         // Plugin Name MUST be identical to namespace for Plugin Directory to detect updated versions
-        return 'MatomoAnalytics';
+        return 'MatomoConnector';
     }
 
     public function getPluginDescription()
@@ -62,6 +62,6 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/aljawaid/MatomoAnalytics';
+        return 'https://github.com/aljawaid/MatomoConnector';
     }
 }

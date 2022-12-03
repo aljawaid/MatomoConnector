@@ -1,18 +1,18 @@
 <?php
 
-namespace Kanboard\Plugin\MatomoAnalytics\Controller;
+namespace Kanboard\Plugin\MatomoConnector\Controller;
 
 use Kanboard\Controller\BaseController;
 use Kanboard\Core\Plugin\Directory;
 
 /**
- * Class MatomoAnalytics
+ * Class MatomoConnector
  * 
  * @author aljawaid
  * 
  */
 
-class MatomoAnalyticsController extends \Kanboard\Controller\ConfigController
+class MatomoConnectorController extends \Kanboard\Controller\ConfigController
 {
     /**
      * Display the Settings Page
@@ -22,8 +22,8 @@ class MatomoAnalyticsController extends \Kanboard\Controller\ConfigController
 
     public function show()
     {
-        $this->response->html($this->helper->layout->config('matomoAnalytics:config/settings', array(
-            'title' => 'MatomoAnalytics &#10562; '.t('Settings'),
+        $this->response->html($this->helper->layout->config('matomoConnector:config/settings', array(
+            'title' => 'MatomoConnector &#10562; '.t('Settings'),
         )));
     }
 
@@ -43,6 +43,6 @@ class MatomoAnalyticsController extends \Kanboard\Controller\ConfigController
             $this->flash->failure(t('Unable to save your settings.'));
         }
 
-        $this->response->redirect($this->helper->url->to('MatomoAnalyticsController', $redirect, ['plugin' => 'MatomoAnalytics']));
+        $this->response->redirect($this->helper->url->to('MatomoConnectorController', $redirect, ['plugin' => 'MatomoConnector']));
     }
 }
