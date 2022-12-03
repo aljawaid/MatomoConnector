@@ -1,6 +1,6 @@
 <div class="matomo-page-header">
-    <h2>
-        <?= t('Matomo Analytics') ?>
+    <h2 class="">
+        <img src="/plugins/MatomoAnalytics/Assets/matomo-logo.svg" alt="">
     </h2>
 </div>
 <div class="page-margin">

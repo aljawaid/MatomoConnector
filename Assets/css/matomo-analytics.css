@@ -52,6 +52,10 @@ a:hover { color: var(--pp-red-alt-2) !important; }
 
 .relative { position: relative; }
 
+.matomo-page-header h2 {
+    text-align: center;
+}
+
 .matomo-plugin-version {
     display: block;
     font-size: 0.9em;
