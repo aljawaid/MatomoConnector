@@ -2,19 +2,16 @@
 
 #### _Plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
 
-`Brief intro`
+Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.
 
 
 Features
 -------------
-**Apache Version - Cloaking**
-**General Version**
-**Tracking Code**
-- 
-**JavaScript Disabled Fallback Code**
-- 
+**Matomo Tracking Code**
+- Add button to Matomo Admin Interface
+- Apache Version Code as workaround for adblockers - Cloaking
 **Image Tracking Code**
-- Use adblocker workaround
+- Use as fallback for disabled JavaScript
 - Track Page Name (optional)
 
 
@@ -29,7 +26,7 @@ Screenshots
 Usage
 -------------
 
-Go to `Settings` &#10562; Application Settings
+Go to `Settings` &#10562; MatomoAnalytics
 
 
 Compatibility
