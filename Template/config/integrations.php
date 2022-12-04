@@ -2,6 +2,13 @@
     <h4 class="">
         Matomo Analytics <?= t('Connector Installed') ?>
     </h4>
+    <div class="connection-indicator">
+        <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
+            <span class="indicator pp-dark-green">&#10004;</span> <?= t('Configured') ?>
+        <?php else: ?>
+            <span class="indicator pp-red-alt">&#10008;</span> <?= t('Not Configured') ?>
+        <?php endif ?>
+    </div>
     <div class="matomo-buttons">
         <a href="<?= $this->url->href('MatomoConnectorController', 'show', array('plugin' => 'MatomoConnector')) ?>" class="btn" title="">
         <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>">

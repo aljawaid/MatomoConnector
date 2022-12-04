@@ -176,3 +176,16 @@ a:hover { color: var(--pp-red-alt-2) !important; }
 .matomo-admin-interface legend, .matomo-tracking legend, .matomo-image-tracking legend {
     font-weight: 600;
 }
+
+.matomo-connector .connection-indicator {
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.matomo-connector .connection-indicator span {
+    font-size: 1.1em;
+}
+
+.matomo-connector .matomo-buttons {
+    display: inline-block;
+}

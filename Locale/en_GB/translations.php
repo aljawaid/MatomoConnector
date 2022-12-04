@@ -11,6 +11,8 @@ return array(
   // config/integrations.php
   //
   'Connector Installed' => 'Connector Installed',
+  'Configured' => 'Configured',
+  'Not Configured' => 'Not Configured',
   //
   // config/settings.php
   //
