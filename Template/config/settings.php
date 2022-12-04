@@ -1,6 +1,9 @@
 <div class="matomo-page-header">
     <h2 class="">
         <img src="/plugins/MatomoConnector/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
+        <button class="back-button">
+            <a href="<?= $this->url->href('ConfigController', 'integrations') ?>">
+            <?= t('Back to Settings') ?></a></button>
     </h2>
 </div>
 <div class="page-margin">
