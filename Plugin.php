@@ -12,7 +12,7 @@ class Plugin extends Base
     {
         // CSS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:css', array('template' => 'plugins/MatomoConnector/Assets/css/matomo-analytics.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/MatomoConnector/Assets/css/matomo-connector.css'));
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
