@@ -45,6 +45,7 @@ return array(
   'Enter your domain' => '',
   'Your Kanboard domain is detected as' => '',
   'Prepend the Kanboard site domain to the page title when tracking' => '',
+  'Don\'t prepend' => '',
   'Fallback Code' => '',
   'Image Tracking Code' => '',
   'Optional' => '',

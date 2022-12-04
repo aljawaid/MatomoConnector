@@ -98,6 +98,13 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     justify-content: space-evenly;
 }
 
+.matomo-tracking ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 30px;
+}
+
 .matomo-image-tracking .matomo-form-help {
     text-align: center;
     margin-top: 5px;

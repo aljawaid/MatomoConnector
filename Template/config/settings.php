@@ -45,7 +45,14 @@
                 <p class="form-help m-t-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
             <div class="">
-                <?= $this->form->checkbox('doc_title', t('Prepend the Kanboard site domain to the page title when tracking'), 1, $values['doc_title'] == 1) ?>
+                <ul class="">
+                    <li class="">
+                        <?= $this->form->radio('doc_title', t('Prepend the Kanboard site domain to the page title when tracking'), 'prepend', isset($values['doc_title']) && $values['doc_title'] == 'prepend') ?>
+                    </li>
+                    <li class="">
+                        <?= $this->form->radio('doc_title', t('Don\'t prepend'), 'dont_prepend', isset($values['doc_title']) && $values['doc_title'] == 'dont_prepend') ?>
+                    </li>
+                </ul>
             </div>
         </fieldset>
 
