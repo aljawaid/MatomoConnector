@@ -15,8 +15,8 @@
             </div>
             <div class="">
                 <?= $this->form->label(t('Matomo Admin Interface'), 'matomo_admin_url', array('class="w-600"')) ?>
-                <?= $this->form->input('url', 'matomo_admin_url', $values, $errors, array('placeholder="https://analytics.mydomain.com"', 'required'), 'w-600') ?>
-                <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface') ?></p>
+                <?= $this->form->input('url', 'matomo_admin_url', $values, $errors, array('placeholder="https://analytics.mydomain.com/"', 'required'), 'w-600') ?>
+                <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface with the trailing slash') ?></p>
             </div>
             <div class="matomo-buttons">
                 <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
@@ -45,7 +45,7 @@
                 <p class="form-help m-t-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
             <div class="">
-                <?= $this->form->checkbox('doc_title', t('Prepend the Kanboard site domain to the page title when tracking'), 1, $values['doc_title'] == 'yes') ?>
+                <?= $this->form->checkbox('doc_title', t('Prepend the Kanboard site domain to the page title when tracking'), 1, $values['doc_title'] == 1) ?>
             </div>
         </fieldset>
 
