@@ -18,7 +18,7 @@ class Plugin extends Base
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
         $this->template->hook->attach('template:layout:head', 'MatomoConnector:layout/head');
         $this->template->hook->attach('template:layout:bottom', 'MatomoConnector:layout/bottom');
-        $this->template->hook->attach('template:config:sidebar', 'MatomoConnector:config/sidebar');
+        //$this->template->hook->attach('template:config:sidebar', 'MatomoConnector:config/sidebar');
         $this->template->hook->attach('template:config:integrations', 'MatomoConnector:config/integrations');
 
         // MATOMO SETTINGS Page - Routes

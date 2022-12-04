@@ -27,11 +27,8 @@ Screenshots
 Usage
 -------------
 
-Go to `Settings` &#10562; MatomoConnector
-
-**_or_**
-
 Go to `Settings` &#10562; Integrations
+
 
 Compatibility
 -------------
