@@ -44,6 +44,7 @@ return array(
   'Your Kanboard domain is detected as' => '',
   'Site ID' => '',
   'Bad requests in the browser console are usually the result of an incorrect Site ID' => '',
+  'Prepend the Kanboard site domain to the page title when tracking' => 'Prepend the Kanboard site domain to the page title when tracking',
   'Fallback Code' => '',
   'Image Tracking Code' => '',
   'Optional' => '',

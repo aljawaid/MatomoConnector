@@ -44,6 +44,9 @@
                 <?= $this->form->text('domain', $values, $errors, array('placeholder="'. t('Enter your domain') .'"')) ?>
                 <p class="form-help m-t-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
+            <div class="">
+                <?= $this->form->checkbox('doc_title', t('Prepend the Kanboard site domain to the page title when tracking'), 1, $values['doc_title'] == 'yes') ?>
+            </div>
         </fieldset>
 
         <fieldset class="matomo-image-tracking">

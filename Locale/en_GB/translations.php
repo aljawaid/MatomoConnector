@@ -30,6 +30,7 @@ return array(
   'Knowledge Base' => 'Knowledge Base',
   'Community Forum' => 'Community Forum',
   'Tracking Code' => 'Tracking Code',
+  'Prepend the Kanboard site domain to the page title when tracking' => 'Prepend the Kanboard site domain to the page title when tracking',
   'Track Across All Subdomains' => 'Track Across All Subdomains',
   'Enter your domain' => 'Enter your domain',
   'Your Kanboard domain is detected as' => 'Your Kanboard domain is detected as',
