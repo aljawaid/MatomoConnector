@@ -9,9 +9,9 @@
         <fieldset class="matomo-admin-interface">
             <legend><?= t('Admin Interface') ?></legend>
             <div class="">
-                <?= $this->form->label(t('Website Name'), 'website_name', array('class=""')) ?>
-                <?= $this->form->text('website_name', $values, $errors, array('placeholder="'. t('My Kanboard Instance') .'"')) ?>
-                <p class="form-help"><?= t('This label is not used in the Matomo script') ?></p>
+                <?= $this->form->label(t('Website Name'), 'admin_website_name', array('class="login-btn-label"')) ?>
+                <?= $this->form->text('admin_website_name', $values, $errors, array('placeholder="'. t('My Matomo Admin') .'"')) ?>
+                <p class="form-help"><?= t('This label is used for the login button or leave blank for "Matomo Admin Login"') ?></p>
             </div>
             <div class="">
                 <?= $this->form->label(t('Matomo Admin Interface'), 'matomo_admin_url', array('class="w-600"')) ?>
