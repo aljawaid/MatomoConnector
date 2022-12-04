@@ -47,7 +47,7 @@ return array(
   'This is the title of the action being tracked' => 'This is the title of the action being tracked',
   'Save Settings' => 'Save Settings',
   'Connector' => 'Connector',
-  '' => '',
+  'Back to Integrations' => 'Back to Integrations',
   '' => '',
   '' => '',
   '' => '',
