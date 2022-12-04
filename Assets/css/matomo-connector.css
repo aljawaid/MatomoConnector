@@ -59,14 +59,9 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     position: relative;
 }
 
-.matomo-page-header h2 button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: .7em;
-    border-radius: var(--border-radius);
+.back-button {
     border-color: var(--blue-border-gradient-match);
-    color: var(--button-blue-border-gradient-match);
+    margin-left: 10px;
 }
 
 .matomo-plugin-version {

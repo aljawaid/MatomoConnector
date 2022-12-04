@@ -1,9 +1,6 @@
 <div class="matomo-page-header">
     <h2 class="">
         <img src="/plugins/MatomoConnector/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
-        <button class="back-button">
-            <a href="<?= $this->url->href('ConfigController', 'integrations') ?>">
-            <?= t('Back to Integrations') ?></a></button>
     </h2>
 </div>
 <div class="page-margin">
@@ -72,6 +69,9 @@
         </fieldset>
         <div class="form-actions">
             <button type="submit" class="btn btn-blue"><?= t('Save Settings') ?></button>
+            <button class="back-button btn">
+            <a href="<?= $this->url->href('ConfigController', 'integrations') ?>">
+            <?= t('Back to Integrations') ?></a></button>
         </div>
     </form>
     <footer class="matomo-plugin-version">
