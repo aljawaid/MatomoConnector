@@ -35,14 +35,14 @@
         <fieldset class="matomo-tracking">
             <legend><?= t('Tracking Code') ?></legend>
             <div class="">
-                <?= $this->form->label(t('Track Across All Subdomains'), 'domain', array('class="w-200"')) ?>
-                <?= $this->form->text('domain', $values, $errors, array('placeholder="'. t('Enter your domain') .'"')) ?>
-                <p class="form-help m-t-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
-            </div>
-            <div class="">
                 <?= $this->form->label(t('Site ID'), 'site_id', array('class=""')) ?>
                 <?= $this->form->number('site_id', $values, $errors, array('placeholder="5"', 'required')) ?>
                 <p class="form-help"><?= t('Bad requests in the browser console are usually the result of an incorrect Site ID') ?></p>
+            </div>
+            <div class="">
+                <?= $this->form->label(t('Track Across All Subdomains'), 'domain', array('class="w-200"')) ?>
+                <?= $this->form->text('domain', $values, $errors, array('placeholder="'. t('Enter your domain') .'"')) ?>
+                <p class="form-help m-t-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
         </fieldset>
 
