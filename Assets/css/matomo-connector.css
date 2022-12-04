@@ -52,8 +52,21 @@ a:hover { color: var(--pp-red-alt-2) !important; }
 
 .relative { position: relative; }
 
+.page-margin {--page-margin }
+
 .matomo-page-header h2 {
     text-align: center;
+    position: relative;
+}
+
+.matomo-page-header h2 button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: .7em;
+    border-radius: var(--border-radius);
+    border-color: var(--blue-border-gradient-match);
+    color: var(--button-blue-border-gradient-match);
 }
 
 .matomo-plugin-version {
@@ -134,9 +147,12 @@ a:hover { color: var(--pp-red-alt-2) !important; }
 .matomo-form .form-actions .btn {
     border-radius: var(--border-radius);
 }
-.matomo-connector a img {
-    width: 100px;
+
+.matomo-connector h4 {
+    margin-top: 0;
 }
+
+.matomo-connector a img {}
 
 .matomo-connector a {
     font-size: 1em;
