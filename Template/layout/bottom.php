@@ -2,8 +2,8 @@
 $website_page_name = str_replace(' ', '+', $this->task->configModel->get('website_page_name', ''))
 ?>
 
-<!-- MATOMO IMAGE TRACKER -->
 <?php if ($this->task->configModel->get('image_tracking', '') == 'enable_image_tracking'): ?>
+<!-- MATOMO IMAGE TRACKER -->
     <?php if (!empty($this->task->configModel->get('matomo_admin_url')) && ($this->task->configModel->get('site_id')) && ($this->task->configModel->get('website_page_name'))): ?>
         <img
         referrerpolicy="no-referrer-when-downgrade"

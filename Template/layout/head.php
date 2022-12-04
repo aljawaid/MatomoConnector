@@ -2,6 +2,8 @@
 $website_page_name_js = str_replace(' ', '+', $this->task->configModel->get('website_page_name', ''))
 ?>
 
+<!-- MATOMO CODE -->
+<!-- END OF MATOMO CODE -->
 <!-- Matomo -->
 <!-- End Matomo Code -->
 
@@ -24,3 +26,5 @@ $website_page_name_js = str_replace(' ', '+', $this->task->configModel->get('web
     <!-- IMAGE TRACKING DISABLED -->
 <!-- END OF MATOMO CODE -->
 <?php endif ?>
+
+<?php // question mark ? = &#63; // slash / = &#47; // must be no whitespaces in the string ?>
