@@ -99,6 +99,10 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     width: 600px;
 }
 
+.m-t-4 {
+    margin-top: 4px;
+}
+
 .matomo-form input[type="url"], .matomo-form input[type="number"], .matomo-form input[type="text"]:not(.input-addon-field) {
     /*color: var(--color-light);*/
     border: 1px solid var(--blue-border-gradient-match);
