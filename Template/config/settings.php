@@ -21,7 +21,7 @@
             <div class="matomo-buttons">
                 <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
                     <a href="<?= $this->task->configModel->get('matomo_admin_url', '') ?>" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                        <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Matomo Admin Login') ?>
+                        <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?php if (!empty($this->task->configModel->get('admin_website_name'))): ?> <?= $this->task->configModel->get('admin_website_name') ?><?php else: ?> <?= t('Matomo Admin Login') ?> <?php endif ?>
                     </a>
                 <?php endif ?>
                 <a href="https://matomo.org/guides" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
