@@ -39,7 +39,7 @@ return array(
   'Optional' => 'Optional',
   'Enable Image Tracking' => 'Enable Image Tracking',
   'Enable Image Tracking as JavaScript Fallback' => 'Enable Image Tracking as JavaScript Fallback',
-  'Disable image tracking' => 'Disable image tracking',
+  'Disable Image Tracking' => 'Disable Image Tracking',
   'When using this option as a fallback for JavaScript tracking, the same code will be surrounded in' => 'When using this option as a fallback for JavaScript tracking, the same code will be surrounded in',
   'HTML tags' => 'HTML tags',
   'Page Name' => 'Page Name',

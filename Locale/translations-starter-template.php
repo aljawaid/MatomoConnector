@@ -20,6 +20,8 @@ return array(
   // config/integrations.php
   //
   'Connector Installed' => '',
+  'Configured' => '',
+  'Not Configured' => '',
   //
   // config/settings.php
   //
@@ -46,7 +48,7 @@ return array(
   'Optional' => '',
   'Enable Image Tracking' => '',
   'Enable Image Tracking as JavaScript Fallback' => '',
-  'Disable image tracking' => '',
+  'Disable Image Tracking' => '',
   'When using this option as a fallback for JavaScript tracking, the same code will be surrounded in' => '',
   'HTML tags' => '',
   'Page Name' => '',
@@ -54,7 +56,7 @@ return array(
   'This is the title of the action being tracked' => '',
   'Save Settings' => '',
   'Connector' => 'Connector',
-  '' => '',
+  'Back to Integrations' => 'Back to Integrations',
   '' => '',
   '' => '',
   '' => '',

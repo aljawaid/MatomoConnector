@@ -57,7 +57,7 @@
                     <?= $this->form->radio('image_tracking', t('Enable Image Tracking as JavaScript Fallback'), 'enable_image_tracking_js', isset($values['image_tracking']) && $values['image_tracking'] == 'enable_image_tracking_js') ?>
                 </li>
                 <li>
-                    <?= $this->form->radio('image_tracking', t('Disable image tracking'), 'disable_image_tracking', isset($values['image_tracking']) && $values['image_tracking'] == 'disable_image_tracking') ?>
+                    <?= $this->form->radio('image_tracking', t('Disable Image Tracking'), 'disable_image_tracking', isset($values['image_tracking']) && $values['image_tracking'] == 'disable_image_tracking') ?>
                 </li>
             </ul>
             <p class="form-help matomo-form-help"><?= t('When using this option as a fallback for JavaScript tracking, the same code will be surrounded in') ?> <code><?= htmlentities('<noscript></noscript>') ?></code> <?= t('HTML tags') ?></p>
