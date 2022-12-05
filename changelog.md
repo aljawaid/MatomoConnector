@@ -7,9 +7,10 @@
 
 _(most recent changes are listed on top):_
 - Initial release
+- Added Tracking Code
+- Added Image Tracking Code
+- Added JS Fallback Code
 - Added `en_GB` translations
 
 
-[**Full Changelog**](../master/changelog.md "See changes")
-
-[**README**](../master/README.md "View README")
+Read the full [**Changelog**](../master/changelog.md "See changes") or view the [**README**](../master/README.md "View README")
