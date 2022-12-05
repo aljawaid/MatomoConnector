@@ -24,6 +24,10 @@ Screenshots
 
 ![Integrations](../master/screenshot-integrations.png "Integrations Section")
 
+**Settings Section**  
+
+![Settings](../master/screenshot-settings.png "Plugin Settings")
+
 
 Usage
 -------------
