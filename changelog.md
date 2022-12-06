@@ -1,6 +1,14 @@
 # Changelog
 
 
+## 2.0
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+- NEW: Add Apache version for cloaking
+
+
 ## v1.0
 
 ### What's Changed

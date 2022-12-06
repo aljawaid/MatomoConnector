@@ -10,7 +10,7 @@ Features
 **Matomo Tracking Code**
 - Add login button to the Matomo Admin Interface
 - Track across all subdomains
-- Apache version for cloaking _(as a workaround for adblockers)_
+- Apache version for cloaking _(as a workaround for adblockers)_ _(v2.0+)_
 
 **Image Tracking Code**
 - Use as fallback for disabled JavaScript
