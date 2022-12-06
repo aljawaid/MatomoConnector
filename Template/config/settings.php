@@ -16,7 +16,7 @@
             <div class="">
                 <?= $this->form->label(t('Matomo Admin Interface'), 'matomo_admin_url', array('class="w-600"')) ?>
                 <?= $this->form->input('url', 'matomo_admin_url', $values, $errors, array('placeholder="https://analytics.mydomain.com/"', 'required'), 'w-600') ?>
-                <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface with the trailing slash') ?></p>
+                <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface with the trailing slash (or without the trailing slash if using the Apache version)') ?></p>
             </div>
             <div class="matomo-buttons">
                 <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>

@@ -32,7 +32,7 @@ return array(
   'My Matomo Admin' => '',
   'This label is used for the login button or leave blank for "Matomo Admin Login"' => '',
   'Matomo Admin Interface' => '',
-  'Enter the complete URL to your Matomo interface with the trailing slash' => '',
+  'Enter the complete URL to your Matomo interface with the trailing slash (or without the trailing slash if using the Apache version)' => '',
   'Opens in a new window' => '',
   'Matomo icon' => '',
   'Matomo Admin Login' => '',
