@@ -58,10 +58,10 @@
             <div class="">
                 <ul class="">
                     <li class="">
-                        <?= $this->form->radio('apache_version', t('Use Apache version'), 'cloak', false, 'follow-instructions', isset($values['apache_version']) && $values['apache_version'] == 'cloak') ?>
+                        <?= $this->form->radio('apache_version', t('Use Apache version'), 'cloak', 'follow-instructions', isset($values['apache_version']) && $values['apache_version'] == 'cloak') ?>
                     </li>
                     <li class="">
-                        <?= $this->form->radio('apache_version', t('Don\'t use Apache version'), 'dont_cloak', true, isset($values['apache_version']) && $values['apache_version'] == 'dont_cloak') ?>
+                        <?= $this->form->radio('apache_version', t('Don\'t use Apache version'), 'dont_cloak', isset($values['apache_version']) && $values['apache_version'] == 'dont_cloak') ?>
                     </li>
                 </ul>
                 <details class="bypass">
