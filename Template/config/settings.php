@@ -64,6 +64,19 @@
                         <?= $this->form->radio('apache_version', t('Don\'t use Apache version'), 'dont_cloak', true, isset($values['apache_version']) && $values['apache_version'] == 'dont_cloak') ?>
                     </li>
                 </ul>
+                <details class="bypass">
+                    <summary class="">Instructions for Using Apache Version</summary>
+                    <article>
+                        <h4>Bypass Adblockers Using Apache</h4>
+                        <p>Cloaking or masking is a safe way to avoid detection by the filter lists used by Adblockers. It is up to you to be data-privacy compliant with your local regulations directly through Matomo.</p>
+                        <p><strong><code>HTTP_MOD_REWRITE</code> Apache module must be enabled on the server where your Matomo is installed.</strong></p>
+                        <p>On your Matomo server, create or update your <code>.htaccess file</code> to include the following code:</p>
+                        <code class="htaccess">
+                            # .htaccess<br>RewriteEngine On<br>RewriteRule ^unicorn matomo.js<br>RewriteRule ^rainbow matomo.php
+                        </code>
+                        <p class="source-info">Source: <a href="https://nicco.io/blog/matomo-vs-ublock-origin" class="" rel="noreferrer noopener" target="_blank" title="Opens in a new window">Niccolò Borgioli Blog</a></p>
+                    </article>
+                </details>
             </div>
         </fieldset>
 

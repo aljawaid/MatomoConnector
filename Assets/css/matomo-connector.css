@@ -123,6 +123,34 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     margin-bottom: 0;
 }
 
+.bypass {
+    margin-top: 15px;
+}
+
+.bypass summary {
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bypass p {
+    margin: 10px auto;
+}
+
+.source-info {
+    text-align: right;
+    font-size: .8rem;
+    margin-bottom: 0;
+}
+
+code.htaccess {
+    display: block;
+    border-radius: var(--border-radius);
+    width: fit-content;
+    letter-spacing: 1px;
+    background-color: rgba(27, 31, 35, 0.22);
+}
+
 .matomo-form input[type="url"], .matomo-form input[type="number"], .matomo-form input[type="text"]:not(.input-addon-field) {
     /*color: var(--color-light);*/
     border: 1px solid var(--blue-border-gradient-match);
