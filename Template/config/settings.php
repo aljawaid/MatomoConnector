@@ -54,6 +54,17 @@
                     </li>
                 </ul>
             </div>
+            <h3 class="apache-title"><?= t('Apache Version') ?> <span class="optional"><?= t('Optional') ?></span></h3>
+            <div class="">
+                <ul class="">
+                    <li class="">
+                        <?= $this->form->radio('apache_version', t('Use Apache version'), 'cloak', isset($values['apache_version']) && $values['apache_version'] == 'cloak') ?>
+                    </li>
+                    <li class="">
+                        <?= $this->form->radio('apache_version', t('Don\'t use Apache version'), 'dont_cloak', true, isset($values['apache_version']) && $values['apache_version'] == 'dont_cloak') ?>
+                    </li>
+                </ul>
+            </div>
         </fieldset>
 
         <fieldset class="matomo-image-tracking">
