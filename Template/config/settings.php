@@ -42,7 +42,7 @@
             <div class="">
                 <?= $this->form->label(t('Track Across All Subdomains'), 'domain', array('class="w-200"')) ?>
                 <?= $this->form->text('domain', $values, $errors, array('placeholder="'. t('Enter your domain') .'"')) ?>
-                <p class="form-help m-t-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
+                <p class="form-help mt-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
             <div class="">
                 <ul class="">
