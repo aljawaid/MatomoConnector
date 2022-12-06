@@ -28,6 +28,9 @@ Screenshots
 
 ![Settings](../master/screenshot-settings.png "Plugin Settings")
 
+**Settings Section - _Apache Version_**  
+
+![Settings - Apache version](../master/screenshot-apache.png "Plugin Settings - Apache version")
 
 Usage
 -------------
