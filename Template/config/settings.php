@@ -65,16 +65,16 @@
                     </li>
                 </ul>
                 <details class="bypass">
-                    <summary class="">Instructions for Using Apache Version</summary>
+                    <summary class=""><?= t('Instructions for Using Apache Version') ?></summary>
                     <article>
-                        <h4>Bypass Adblockers Using Apache</h4>
-                        <p>Cloaking or masking is a safe way to avoid detection by the filter lists used by Adblockers. It is up to you to be data-privacy compliant with your local regulations directly through <a href="https://matomo.org/gdpr-analytics" class="" rel="noreferrer noopener" target="_blank" title="Opens in a new window">Matomo</a>.</p>
-                        <p><strong><code>HTTP_MOD_REWRITE</code> Apache module must be enabled on the server where your Matomo is installed.</strong></p>
-                        <p>On your Matomo server, create or update your <code>.htaccess file</code> to include the following code:</p>
+                        <h4><?= t('Bypass Adblockers Using Apache') ?></h4>
+                        <p><?= t('Cloaking or masking is a safe way to avoid detection by the filter lists used by Adblockers. It is up to you to be data-privacy compliant with your local regulations directly through') ?> <a href="https://matomo.org/gdpr-analytics" class="" rel="noreferrer noopener" target="_blank" title="Opens in a new window">Matomo</a>.</p>
+                        <p><strong><code>HTTP_MOD_REWRITE</code> <?= t('Apache module must be enabled on the server where your Matomo is installed.') ?></strong></p>
+                        <p><?= t('On your Matomo server, create or update your') ?> <code>.htaccess file</code> <?= t('to include the following code:') ?></p>
                         <code class="htaccess">
                             # .htaccess<br>RewriteEngine On<br>RewriteRule ^unicorn matomo.js<br>RewriteRule ^rainbow matomo.php
                         </code>
-                        <p class="source-info">Source: <a href="https://nicco.io/blog/matomo-vs-ublock-origin" class="" rel="noreferrer noopener" target="_blank" title="Opens in a new window">Niccolò Borgioli Blog</a></p>
+                        <p class="source-info"><?= t('Source:') ?> <a href="https://nicco.io/blog/matomo-vs-ublock-origin" class="" rel="noreferrer noopener" target="_blank" title="Opens in a new window">Niccolò Borgioli Blog</a></p>
                     </article>
                 </details>
             </div>
