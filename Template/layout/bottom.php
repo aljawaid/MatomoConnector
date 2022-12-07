@@ -10,12 +10,12 @@ $website_page_name = str_replace(' ', '+', $this->task->configModel->get('websit
         <img
         referrerpolicy="no-referrer-when-downgrade"
         src="<?= $this->task->configModel->get('matomo_admin_url', '') ?>&#47;rainbow&#63;idsite=<?= $this->task->configModel->get('site_id', '') ?>&amp;rec=1&amp;action_name=<?= $website_page_name ?>" style="border:0" alt="" />
-    <?php //// IF 'ADMIN URL' & 'SITE ID' & 'CLOAK' //// ?>
+    <?php //// ELSE IF 'ADMIN URL' & 'SITE ID' & 'CLOAK' //// ?>
     <?php elseif (!empty($this->task->configModel->get('matomo_admin_url')) && ($this->task->configModel->get('site_id')) && ($this->task->configModel->get('apache_version', '') == 'cloak')): ?>
         <img
         referrerpolicy="no-referrer-when-downgrade"
         src="<?= $this->task->configModel->get('matomo_admin_url', '') ?>&#47;rainbow&#63;idsite=<?= $this->task->configModel->get('site_id', '') ?>&amp;rec=1&amp;action_name=<?= $website_page_name ?>" style="border:0" alt="" />
-    <?php //// IF 'ADMIN URL' & 'SITE ID' & 'PAGE NAME' //// ?>
+    <?php //// ELSE IF 'ADMIN URL' & 'SITE ID' & 'PAGE NAME' //// ?>
     <?php elseif (!empty($this->task->configModel->get('matomo_admin_url')) && ($this->task->configModel->get('site_id')) && ($this->task->configModel->get('website_page_name'))): ?>
         <img
         referrerpolicy="no-referrer-when-downgrade"
