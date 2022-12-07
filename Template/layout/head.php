@@ -2,6 +2,7 @@
 $website_page_name_js = str_replace(' ', '+', $this->task->configModel->get('website_page_name', ''))
 ?>
 
+<?php //// IF 'TRACKING CODE' //// ?>
 <?php if (!empty($this->task->configModel->get('matomo_admin_url')) && ($this->task->configModel->get('site_id'))): ?>
     <!-- MATOMO CODE -->
     <script>
@@ -17,10 +18,18 @@ $website_page_name_js = str_replace(' ', '+', $this->task->configModel->get('web
         _paq.push(['enableLinkTracking']);
         (function() {
             var u="<?= $this->task->configModel->get('matomo_admin_url', '') ?>";
+            <?php if ($this->task->configModel->get('apache_version', '') == 'cloak'): ?>
+            _paq.push(['setTrackerUrl', u+'rainbow']);
+            <?php else: ?>
             _paq.push(['setTrackerUrl', u+'matomo.php']);
+            <?php endif ?>
             _paq.push(['setSiteId', '<?= $this->task->configModel->get('site_id', '') ?>']);
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            <?php if ($this->task->configModel->get('apache_version', '') == 'cloak'): ?>
+            g.async=true; g.src=u+'unicorn'; s.parentNode.insertBefore(g,s);
+            <?php else: ?>
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            <?php endif ?>
         })();
     </script>
     <!-- END OF MATOMO CODE -->
