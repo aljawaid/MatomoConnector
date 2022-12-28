@@ -4,6 +4,7 @@ namespace Kanboard\Plugin\MatomoConnector\Controller;
 
 use Kanboard\Controller\BaseController;
 use Kanboard\Core\Plugin\Directory;
+use Kanboard\Core\Plugin\Installer;
 
 /**
  * Class MatomoConnector
@@ -23,6 +24,7 @@ class MatomoConnectorController extends \Kanboard\Controller\ConfigController
     public function show()
     {
         $this->response->html($this->helper->layout->config('matomoConnector:config/settings', array(
+            'plugins' => $this->pluginLoader->getPlugins(),
             'title' => 'MatomoConnector &#10562; '.t('Settings'),
         )));
     }

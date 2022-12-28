@@ -110,9 +110,9 @@
     </form>
     <footer class="matomo-plugin-version">
         <?php
-        $pluginVersion = Kanboard\Plugin\MatomoConnector\Plugin::getPluginVersion();
-        $pluginName = Kanboard\Plugin\MatomoConnector\Plugin::getPluginName();
-        $pluginHomepage = Kanboard\Plugin\MatomoConnector\Plugin::getPluginHomepage();
+        $pluginName = $this->app->getPluginName();
+        $pluginVersion = $plugins[$pluginName]->getPluginVersion();
+        $pluginHomepage = $plugins[$pluginName]->getPluginHomepage();
         ?>
         <a href="<?= $pluginHomepage ?>" class="" target="_blank" rel="noreferrer noopener" title="<?= t('Opens in a new window') ?>">
             <?= $pluginName ?>
