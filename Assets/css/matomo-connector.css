@@ -23,6 +23,7 @@
     --blue-icon-dark: #034CA6;
     --panel-background: #EEEEEE;
     --page-margin-matomo: 0px 15px 0px 15px;
+    --transition-matomo: ease-in-out all .3s;
 }
 
 .pp-blue { color: var(--pp-blue); fill: var(--pp-blue); }
@@ -38,8 +39,8 @@
 .pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
 .pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
 
-div, a, details, summary, i, img, table, tr, .btn-uninstall, svg, figure, button {
-    transition: ease-in-out all .3s;
+a, details, summary, i, img, table, tr, svg, figure, button {
+    transition: var(--transition-matomo);
 }
 
 a:hover { color: var(--pp-red-alt-2) !important; }
