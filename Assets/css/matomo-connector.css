@@ -13,16 +13,16 @@
     --pp-green: #2EA02E;
     --pp-green-dark: #055D20;
     --pp-orange: #FF6500;
-    --border-radius: 3px;
+    --blue-icon-dark: #034CA6;
+    --link-color-primary: #36C;
     --button-blue-gradient: linear-gradient(to bottom, #7892c2 80%, #476e9e 100%);
     --blue-border-gradient-match: #476E9E;
-    --header-page-margin: 5px 15px 10px 15px;
-    --title-margin: 0px 15px 0px 15px;
     --button-background-delete: #D05C84;
-    --link-color-primary: #36C;
-    --blue-icon-dark: #034CA6;
-    --panel-background: #EEEEEE;
+    --header-page-margin-matomo: 5px 15px 10px 15px;
     --page-margin-matomo: 0px 15px 0px 15px;
+    --title-margin-matomo: 0px 15px 0px 15px;
+    --panel-background-matomo: #EEEEEE;
+    --border-radius-matomo: 3px;
     --transition-matomo: ease-in-out all .3s;
 }
 
@@ -83,7 +83,7 @@ a:hover { color: var(--pp-red-alt-2) !important; }
     background-color: var(--pp-green-dark);
     padding: 1px 4px 1px 4px;
     color: var(--pp-white);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-matomo);
     font-family: monospace;
     margin-left: 3px;
     font-size: 1em;
@@ -148,7 +148,7 @@ a:hover { color: var(--pp-red-alt-2) !important; }
 
 code.htaccess {
     display: block;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-matomo);
     width: fit-content;
     letter-spacing: 1px;
     background-color: rgba(27, 31, 35, 0.22);
@@ -165,7 +165,7 @@ code.htaccess {
     padding-left: 4px;
     -webkit-appearance: none;
     -moz-appearance: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-matomo);
 
 }
 
@@ -178,12 +178,12 @@ code.htaccess {
 .matomo-buttons a {
     font-size: 1em;
     border-color: var(--blue-border-gradient-match);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-matomo);
     margin-right: 10px;
 }
 
 .matomo-form .form-actions .btn {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-matomo);
 }
 
 .matomo-connector h4 {
