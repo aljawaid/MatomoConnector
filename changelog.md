@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v2.2
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+- FIX: Remove CSS Global Selectors
+
+
 ## v2.1
 
 ### What's Changed
