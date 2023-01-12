@@ -157,6 +157,7 @@ code.htaccess {
     height: 25px;
     padding-bottom: 0;
     padding-left: 4px;
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     border-radius: var(--border-radius-matomo);
