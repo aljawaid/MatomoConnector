@@ -1,6 +1,6 @@
 <div class="matomo-page-header">
     <h2 class="">
-        <img src="/plugins/MatomoConnector/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
+        <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
     </h2>
 </div>
 <div class="page-margin">
@@ -21,14 +21,14 @@
             <div class="matomo-buttons">
                 <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
                     <a href="<?= $this->task->configModel->get('matomo_admin_url', '') ?>" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                        <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?php if (!empty($this->task->configModel->get('admin_website_name'))): ?> <?= $this->task->configModel->get('admin_website_name') ?><?php else: ?> <?= t('Matomo Admin Login') ?> <?php endif ?>
+                        <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?php if (!empty($this->task->configModel->get('admin_website_name'))): ?> <?= $this->task->configModel->get('admin_website_name') ?><?php else: ?> <?= t('Matomo Admin Login') ?> <?php endif ?>
                     </a>
                 <?php endif ?>
                 <a href="https://matomo.org/guides" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                    <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Knowledge Base') ?>
+                    <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Knowledge Base') ?>
                 </a>
                 <a href="https://forum.matomo.org" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                    <img src="/plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Community Forum') ?>
+                    <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?= t('Community Forum') ?>
                 </a>
             </div>
         </fieldset>
