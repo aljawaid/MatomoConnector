@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v2.3
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+- FIX: Delete empty ruleset
+- FIX: Relative URLS for Images
+- FIX: Do not use empty rulesets
+- FIX: Define the standard property `appearance` for compatibility
+
+
 ## v2.2
 
 ### What's Changed
