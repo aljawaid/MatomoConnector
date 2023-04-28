@@ -1,12 +1,11 @@
 # MatomoConnector
-
-#### _Plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
+![GitHub All Releases](https://img.shields.io/github/downloads/aljawaid/MatomoConnector/total?style=for-the-badge "GitHub All Downloads") - **_A Plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_**
 
 Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.
 
 
-Features
--------------
+## Features
+
 **Matomo Tracking Code**
 - Add login button to the Matomo Admin Interface
 - Track across all subdomains
@@ -17,8 +16,7 @@ Features
 - Track Page Name (optional)
 
 
-Screenshots
-----------
+## Screenshots
 
 **Integrations Section**  
 
@@ -32,49 +30,47 @@ Screenshots
 
 ![Settings - Apache version](../master/screenshot-apache.png "Plugin Settings - Apache version")
 
-Usage
--------------
+
+## Usage
 
 Go to `Settings` &#10562; Integrations
 
 
-Compatibility
--------------
+## Installation & Compatibility
 
-- Requires [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software") ≥`1.2.20`
+<details>
+    <summary><strong>Installation</strong></summary>
 
-#### Other Plugins & Action Plugins
-- _No known issues_
-#### Core Files & Templates
-- _No template overrides_
-- _No database changes_
-
-
-Changelog
----------
-
-Read the full [**Changelog**](../master/changelog.md "See changes")
- 
-
-Installation
-------------
 - Install via the **[Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") Plugin Directory** or see [INSTALL.md](../master/INSTALL.md)
+- Read the full [**Changelog**](../master/changelog.md "See changes") to see the latest updates
 
+</details>
+<details>
+    <summary><strong>Compatibility</strong></summary>
 
-Translations
-------------
+- Requires [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") ≥`1.2.20`
+- **Other Plugins & Action Plugins**
+  - _No known issues_
+- **Core Files & Templates**
+  - _No template overrides_
+  - _No database changes_
+
+</details>
+<details>
+    <summary><strong>Translations</strong></summary>
 
 - English (UK)
-- _Contributors welcome_
+- _Starter template available_
+
+</details>
 
 
-Authors & Contributors
-----------------------
+## Authors & Contributors
 
 - [@aljawaid](https://github.com/aljawaid) - Author
 - _Contributors welcome_
 
 
-License
--------
+## License
+
 - This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")

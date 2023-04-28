@@ -62,5 +62,6 @@ _(most recent changes are listed on top):_
 - Added JS Fallback Code
 - Added `en_GB` translations
 
+---
 
 Read the full [**Changelog**](../master/changelog.md "See changes") or view the [**README**](../master/README.md "View README")
