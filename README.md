@@ -4,6 +4,7 @@
 
 Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>]</p>
 
 ## Features
 
@@ -16,6 +17,7 @@ Connect your Kanboard instance to Matomo Analytics to track visitors to your sit
 - Use as fallback for disabled JavaScript
 - Track Page Name (optional)
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Screenshots
 
@@ -31,11 +33,13 @@ Connect your Kanboard instance to Matomo Analytics to track visitors to your sit
 
 ![Settings - Apache version](../master/screenshot-apache.png "Plugin Settings - Apache version")
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Usage
 
 Go to `Settings` &#10562; Integrations
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Installation & Compatibility
 
@@ -65,13 +69,18 @@ Go to `Settings` &#10562; Integrations
 
 </details>
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Authors & Contributors
 
 - [@aljawaid](https://github.com/aljawaid) - Author
 - _Contributors welcome_
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## License
 
 - This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")
+
+<p align="right">[<a href="#readme-top">&#8593; Top</a>]</p>
+<a name="readme-bottom"></a>
