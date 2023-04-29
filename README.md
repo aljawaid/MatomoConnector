@@ -1,5 +1,5 @@
 # MatomoConnector
-![GitHub All Releases](https://img.shields.io/github/downloads/aljawaid/MatomoConnector/total?style=for-the-badge "GitHub All Downloads") - **_A Plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_**
+![GitHub All Releases](https://img.shields.io/github/downloads/aljawaid/MatomoConnector/total?style=for-the-badge "GitHub All Downloads") - **_A plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_**
 
 Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.
 
