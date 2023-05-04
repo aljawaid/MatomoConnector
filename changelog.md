@@ -1,17 +1,14 @@
 # Changelog
 
+## What's Changed
 
 ## v2.4
-
-## What's Changed
 
 _(most recent changes are listed on top):_
 - FIX: Unix (LF) Line Endings and Tabs > Spaces
 
 
 ## v2.3
-
-### What's Changed
 
 _(most recent changes are listed on top):_
 - FIX: Delete empty ruleset
@@ -22,15 +19,11 @@ _(most recent changes are listed on top):_
 
 ## v2.2
 
-### What's Changed
-
 _(most recent changes are listed on top):_
 - FIX: Remove CSS Global Selectors
 
 
 ## v2.1
-
-### What's Changed
 
 _(most recent changes are listed on top):_
 - FIX: Uncaught Error: Non-static method - Fixes #2
@@ -44,16 +37,12 @@ _(most recent changes are listed on top):_
 
 ## v2.0
 
-### What's Changed
-
 _(most recent changes are listed on top):_
 - NEW: Add Apache version for cloaking
 - Add Matomo GDPR link
 
 
 ## v1.0
-
-### What's Changed
 
 _(most recent changes are listed on top):_
 - Initial release
