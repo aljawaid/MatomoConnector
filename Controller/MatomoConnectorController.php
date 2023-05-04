@@ -25,7 +25,7 @@ class MatomoConnectorController extends \Kanboard\Controller\ConfigController
     {
         $this->response->html($this->helper->layout->config('matomoConnector:config/settings', array(
             'plugins' => $this->pluginLoader->getPlugins(),
-            'title' => 'MatomoConnector &#10562; '.t('Settings'),
+            'title' => 'MatomoConnector &#10562; ' . t('Settings'),
         )));
     }
 

@@ -10,7 +10,7 @@
             <legend><?= t('Admin Interface') ?></legend>
             <div class="">
                 <?= $this->form->label(t('Website Name'), 'admin_website_name', array('class="login-btn-label"')) ?>
-                <?= $this->form->text('admin_website_name', $values, $errors, array('placeholder="'. t('My Matomo Admin') .'"')) ?>
+                <?= $this->form->text('admin_website_name', $values, $errors, array('placeholder="' . t('My Matomo Admin') . '"')) ?>
                 <p class="form-help"><?= t('This label is used for the login button or leave blank for "Matomo Admin Login"') ?></p>
             </div>
             <div class="">
@@ -41,7 +41,7 @@
             </div>
             <div class="">
                 <?= $this->form->label(t('Track Across All Subdomains'), 'domain', array('class="w-200"')) ?>
-                <?= $this->form->text('domain', $values, $errors, array('placeholder="'. t('Enter your domain') .'"')) ?>
+                <?= $this->form->text('domain', $values, $errors, array('placeholder="' . t('Enter your domain') . '"')) ?>
                 <p class="form-help mt-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
             </div>
             <div class="">
@@ -97,7 +97,7 @@
             <p class="form-help matomo-form-help"><?= t('When using this option as a fallback for JavaScript tracking, the same code will be surrounded in') ?> <code><?= htmlentities('<noscript></noscript>') ?></code> <?= t('HTML tags') ?></p>
             <div class="">
                 <?= $this->form->label(t('Page Name'), 'website_page_name', array('class="optional-label"')) ?>
-                <?= $this->form->text('website_page_name', $values, $errors, array('placeholder="'. t('My Kanboard Instance') .'"')) ?>
+                <?= $this->form->text('website_page_name', $values, $errors, array('placeholder="' . t('My Kanboard Instance') . '"')) ?>
                 <p class="form-help"><?= t('This is the title of the action being tracked') ?></p>
             </div>
         </fieldset>
