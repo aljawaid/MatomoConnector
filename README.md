@@ -1,4 +1,4 @@
-<h1 name="readme-top">MatomoConnector</h1>
+<h1 name="user-content-readme-top">MatomoConnector</h1>
 <p align="center">
     <a href="https://github.com/aljawaid/MatomoConnector/releases">
         <img src="https://img.shields.io/github/v/release/aljawaid/MatomoConnector?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
@@ -33,7 +33,7 @@
 
 Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Features
 
@@ -46,7 +46,7 @@ Connect your Kanboard instance to Matomo Analytics to track visitors to your sit
 - Use as fallback for disabled JavaScript
 - Track Page Name (optional)
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Screenshots
 
@@ -62,13 +62,13 @@ Connect your Kanboard instance to Matomo Analytics to track visitors to your sit
 
 ![Settings - Apache version](../master/screenshot-apache.png "Plugin Settings - Apache version")
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#installation--compatibility">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#installation--compatibility">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Usage
 
 Go to `Settings` &#10562; Integrations
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Installation & Compatibility
 
@@ -98,14 +98,14 @@ Go to `Settings` &#10562; Integrations
 
 </details>
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#usage">&#8592; Previous</a>] [<a href="#license">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#usage">&#8592; Previous</a>] [<a href="#license">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Authors & Contributors
 
 - [@aljawaid](https://github.com/aljawaid) - Author
 - _Contributors welcome_
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#installation--compatibility">&#8592; Previous</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#installation--compatibility">&#8592; Previous</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## License
 
@@ -113,7 +113,7 @@ Go to `Settings` &#10562; Integrations
 
 ---
 
-<h3 align="center">
+<p align="center">
     <a href="https://github.com/aljawaid/MatomoConnector/stargazers" title="View Stargazers">
         <img src="https://img.shields.io/github/stars/aljawaid/MatomoConnector?logo=github&style=flat-square" alt="MatomoConnector">
     </a>
@@ -135,6 +135,6 @@ Go to `Settings` &#10562; Integrations
     <a href="https://github.com/aljawaid/MatomoConnector/compare/" title="Latest Commits">
         <img alt="GitHub commits since latest release (by date)" src="https://img.shields.io/github/commits-since/aljawaid/MatomoConnector/latest?style=flat-square">
     </a>
-</h3>
-<p align="right">[<a href="#readme-top">&#8593; Top</a>]</p>
-<a name="readme-bottom"></a>
+</p>
+<p align="right">[<a href="#user-content-readme-top">&#8593; Top</a>]</p>
+<a name="user-content-readme-bottom"></a>
