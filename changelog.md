@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.5
+
+_(most recent changes are listed on top):_
+- FIX: Changelog
+- FIX: CSS Code Syntax
+- FIX: Code Syntax
+- FIX: Code Syntax
+- NEW: Add Footer Badges to README.md
+- NEW: Add Section Navigation Links to README.md
+- NEW: Add Badges to README.md
+- NEW: Add README Page Navigation Links
+- FIX: Content Flow for README.md
+- FIX: Content Flow for INSTALL.md
+- Create INSTALL.md
+
+
 ## v2.4
 
 _(most recent changes are listed on top):_
