@@ -1,7 +1,5 @@
 # Changelog
 
-## What's Changed
-
 ## v2.4
 
 _(most recent changes are listed on top):_
