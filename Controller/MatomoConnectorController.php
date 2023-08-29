@@ -7,12 +7,12 @@ use Kanboard\Core\Plugin\Directory;
 use Kanboard\Core\Plugin\Installer;
 
 /**
- * Class MatomoConnector
- * 
- * @author aljawaid
- * 
+ * Plugin MatomoConnector
+ *
+ * Class MatomoConnectorController
+ * @package  Kanboard/Controller
+ * @author   aljawaid
  */
-
 class MatomoConnectorController extends \Kanboard\Controller\ConfigController
 {
     /**
@@ -20,7 +20,6 @@ class MatomoConnectorController extends \Kanboard\Controller\ConfigController
      *
      * @access public
      */
-
     public function show()
     {
         $this->response->html($this->helper->layout->config('matomoConnector:config/settings', array(
@@ -30,8 +29,11 @@ class MatomoConnectorController extends \Kanboard\Controller\ConfigController
     }
 
     /**
-     * Save settings
+     * Save Settings
      *
+     * @see     ConfigController.php   save()
+     * @author  Frederic Guillot
+     * @author  aljawaid
      */
     public function save()
     {
