@@ -41,7 +41,7 @@
 
 .display-none, .d-none { display: none !important;}
 
-.font-weight-bold { font-weight: 700; }
+.font-weight-bold { font-weight: bold; }
 
 .text-center { text-align: center; }
 
@@ -145,7 +145,7 @@ code.htaccess {
     border-radius: var(--border-radius-matomo);
     width: fit-content;
     letter-spacing: 1px;
-    background-color: rgba(27, 31, 35, .22);
+    background-color: rgb(27, 31, 35, .22);
 }
 
 .matomo-form input[type="url"], .matomo-form input[type="number"], .matomo-form input[type="text"]:not(.input-addon-field) {
@@ -194,7 +194,7 @@ code.htaccess {
     color: var(--pp-grey);
 }
 
-.optional-label:after {
+.optional-label::after {
     content: 'Optional';
     font-size: .8em;
     font-style: italic;
