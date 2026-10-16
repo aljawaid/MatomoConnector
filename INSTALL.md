@@ -1,22 +1,88 @@
-# Plugin Installation
+# MatomoConnector installation
 
-- **Install via the [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") Plugin Directory**
-  - _Go to:_
-    - Kanboard: `Plugins` &#10562; `Plugin Directory`
-  - _or with [PluginManager](https://github.com/aljawaid/PluginManager "A Kanboard plugin") installed:_
-    - Kanboard: `Settings` &#10562; `Plugins` &#10562; `Plugin Directory`
-- **Install via the [Releases](../master/Releases/ "A copy of each release is saved in the folder") folder**
-  - A copy of each release is saved in the `/Releases` folder of the repository
-  - Simply extract the `.zip` file into the `/plugins` directory
-- **Install via [GitHub](https://github.com/ "Find the correct plugin from the list of repositories")**
-  - Download the `.zip` file and decompress everything under the directory `/plugins`
-  - The folder inside the `.zip` must not contain any branch names and must be exact case (matching the plugin name)
+> **Before enabling tracking:** confirm the organisation's consent, privacy,
+> retention and access requirements. A cookieless configuration may still
+> process personal data and may still require consent.
 
-_Note: The `/plugins` folder is case-sensitive._
+## Requirements
 
-- **Install using Git CLI**
-  - `git clone` (_or ftp upload_) and extract the `.zip` file into this folder: `.\plugins\` (must be exact case)
+| Component | Requirement |
+| --- | --- |
+| Kanboard | 1.2.54 or later |
+| PHP | 8.2 to 8.5 |
+| Matomo | A reachable Matomo 5.14.x deployment and valid Site ID |
+| Direct tracking | Browser access to the Matomo script and collection origin |
+| First-party routing | Two HTTPS routes configured on the Kanboard web server |
 
----
+## Install from the Kanboard Plugin Directory
 
-Read the full [**Changelog**](../master/changelog.md "See changes") or view the [**README**](../master/README.md "View README")
+1. Open **Settings → Plugins → Plugin Directory**.
+2. Find **MatomoConnector**.
+3. Install the plugin.
+4. Open **Settings → Integrations → Matomo Analytics**.
+
+## Install from a release archive
+
+1. Download the intended release archive.
+1. Verify its provenance and integrity using the release publication.
+1. Extract it so the final directory is exactly:
+
+```text
+plugins/
+└── MatomoConnector/
+    ├── Plugin.php
+    ├── Assets/
+    ├── Controller/
+    ├── Helper/
+    ├── Locale/
+    └── Template/
+```
+
+1. Ensure the web-server account can read the plugin files.
+1. Reload Kanboard and confirm the plugin appears under
+   **Settings → Integrations**.
+
+The historical archives in `Releases/` are retained as release history. They
+are not rewritten by this update; use the newly published release archive for
+version 3.0.0.
+
+## Install with Git
+
+From Kanboard's `plugins` directory:
+
+```console
+git clone https://github.com/aljawaid/MatomoConnector.git MatomoConnector
+```
+
+For a production installation, deploy a reviewed release tag rather than
+tracking a moving branch.
+
+## Upgrade notes for 3.0.0
+
+- Existing configured installations continue with cookie-based tracking until
+  a tracking mode is explicitly saved.
+- New installations start with tracking disabled.
+- Legacy `unicorn` and `rainbow` Apache aliases remain readable until settings
+  are saved.
+- Saving selects either normal direct endpoints or the new first-party paths.
+- Legacy always-on image tracking becomes a no-JavaScript fallback to prevent
+  duplicate page views.
+- No database migration is required; settings continue to use Kanboard's
+  settings table.
+
+## Acceptance checklist
+
+- Sign in as an administrator and save the intended mode.
+- Confirm an ordinary user cannot open or save the settings page.
+- Inspect the browser Network panel for one script request and one collection
+  request per page view.
+- With cookieless mode, confirm no Matomo cookies are created.
+- With Do Not Track enabled, confirm Matomo honours the browser preference.
+- With JavaScript disabled and image fallback enabled, confirm one image request.
+- Test a representative task page and project page without exposing sensitive
+  titles beyond the intended Matomo configuration.
+- Confirm the layout at desktop and mobile widths in the active light and dark themes.
+- For first-party routing, complete the checks in the
+  [first-party routing guide](docs/FIRST_PARTY_ROUTING.md).
+
+Read the [changelog](changelog.md) before publishing a release.

@@ -1,140 +1,127 @@
-<h1 name="user-content-readme-top">MatomoConnector</h1>
-<p align="center">
-    <a href="https://github.com/aljawaid/MatomoConnector/releases">
-        <img src="https://img.shields.io/github/v/release/aljawaid/MatomoConnector?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/releases">
-        <img src="https://img.shields.io/github/downloads/aljawaid/MatomoConnector/total?style=for-the-badge&color=orange" alt="GitHub All Releases" title="GitHub All Downloads">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/releases">
-        <img src="https://img.shields.io/github/directory-file-count/aljawaid/MatomoConnector?style=for-the-badge&color=orange" alt="GitHub Repository File Count" title="GitHub Repository File Count">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/releases">
-        <img src="https://img.shields.io/github/repo-size/aljawaid/MatomoConnector?style=for-the-badge&color=orange" alt="GitHub Repository Size" title="GitHub Repository Size">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/releases">
-        <img src="https://img.shields.io/github/languages/code-size/aljawaid/MatomoConnector?style=for-the-badge&color=orange" alt="GitHub Code Size" title="GitHub Code Size">
-    </a>
-</p>
-<p align="center">
-    <a href="https://github.com/aljawaid/MatomoConnector/discussions">
-        <img src="https://img.shields.io/github/discussions/aljawaid/MatomoConnector?style=for-the-badge&color=blue" alt="GitHub Discussions" title="Read Discussions">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/compare">
-        <img src="https://img.shields.io/github/commits-since/aljawaid/MatomoConnector/latest?include_prereleases&style=for-the-badge&color=blue" alt="GitHub Commits Since Last Release" title="GitHub Commits Since Last Release">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/compare">
-        <img src="https://img.shields.io/github/commit-activity/m/aljawaid/MatomoConnector?style=for-the-badge&color=blue" alt="GitHub Commit Monthly Activity" title="GitHub Commit Monthly Activity">
-    </a>
-    <a href="https://github.com/kanboard/kanboard" title="Kanboard - Kanban Project Management Software">
-        <img src="https://img.shields.io/badge/Plugin%20for-kanboard-D40000?style=for-the-badge&labelColor=000000" alt="Kanboard">
-    </a>
-</p>
+# MatomoConnector
 
-Connect your Kanboard instance to Matomo Analytics to track visitors to your site. Set the standard tracking code or use the optional JavaScript fallback code with further options for image tracking.
+MatomoConnector connects Kanboard to Matomo with explicit privacy modes,
+validated tracker routing and an optional image fallback.
 
-<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
+> **Privacy and production limit:** Cookieless tracking does not automatically
+> remove consent or privacy obligations. First-party routing can improve request
+> delivery, but it must not override Do Not Track, consent choices or other
+> deliberate visitor controls.
 
 ## Features
 
-**Matomo Tracking Code**
-- Add login button to the Matomo Admin Interface
-- Track across all subdomains
-- Apache version for cloaking _(as a workaround for adblockers)_ _(v2.0+)_
+- Administrator-only configuration with server-side validation.
+- Tracking disabled by default for a new installation.
+- Privacy-enhanced cookieless tracking.
+- Cookie-based tracking with secure cookies requested on HTTPS pages.
+- Browser Do Not Track respected in both active tracking modes.
+- Direct Matomo delivery or same-origin first-party tracker paths.
+- Optional cross-subdomain cookie scope.
+- Optional page-title prefix.
+- Optional no-JavaScript image fallback without duplicate page views.
+- Responsive, theme-aware settings and integration views.
 
-**Image Tracking Code**
-- Use as fallback for disabled JavaScript
-- Track Page Name (optional)
+## Tracking modes
 
-<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
+| Mode | Browser requests | Matomo cookies | Browser feature detection |
+| --- | --- | --- | --- |
+| Disabled | None | None | None |
+| Privacy-enhanced cookieless | Sent when allowed | Disabled | Disabled |
+| Cookie-based | Sent when Do Not Track allows | Enabled | Matomo default |
 
-## Screenshots
+The plugin does not provide a consent banner or make a legal determination.
+Configure consent and retention controls for the relevant jurisdiction and use
+case.
 
-**Integrations Section**  
+## Request flow
 
-![Integrations](../master/screenshot-integrations.png "Integrations Section")
+### Direct tracking
 
-**Settings Section**  
+```text
+Kanboard page
+    |
+    +-- local MatomoConnector bootstrap
+            |
+            +-- Matomo script URL
+            +-- Matomo collection URL
+```
 
-![Settings](../master/screenshot-settings.png "Plugin Settings")
+Kanboard's Content Security Policy is extended only with the validated HTTP(S)
+Matomo origin while direct tracking is active.
 
-**Settings Section - _Apache Version_**  
+### First-party routing
 
-![Settings - Apache version](../master/screenshot-apache.png "Plugin Settings - Apache version")
+```text
+Kanboard page
+    |
+    +-- local MatomoConnector bootstrap
+            |
+            +-- /same-origin/matomo.js  ----+
+            +-- /same-origin/matomo.php ---+--> web-server reverse proxy --> Matomo
+```
 
-<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#installation--compatibility">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
+The plugin accepts root-relative script and collection paths. It does not create
+a PHP proxy or change Apache configuration. See the
+[first-party tracker routing guide](docs/FIRST_PARTY_ROUTING.md).
 
-## Usage
+## Configuration
 
-Go to `Settings` &#10562; Integrations
+1. Open **Settings → Integrations → Matomo Analytics**.
+2. Choose the tracking mode.
+3. Enter the Matomo Site ID.
+4. For direct tracking, enter the credential-free Matomo base URL.
+5. For first-party routing, configure the web server and enter the two
+   same-origin paths.
+6. Review the optional page, cookie-domain and image-fallback settings.
+7. Save and complete the browser acceptance checks documented for the selected
+   routing mode.
 
-<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
+Existing configured installations without an explicit tracking mode continue
+in cookie-based mode until an administrator saves a new choice. Legacy Apache
+aliases remain readable until the settings page is saved. Legacy always-on
+image tracking is treated as a no-JavaScript fallback so a page view is not
+counted twice.
 
-## Installation & Compatibility
+## Compatibility
 
-<details>
-    <summary><strong>Installation</strong></summary>
+| Component | Supported or validated target |
+| --- | --- |
+| Kanboard | 1.2.54 or later |
+| PHP | 8.2, 8.3, 8.4 and 8.5 |
+| Matomo | 5.14.x tracking API; release acceptance targets 5.14.1 |
+| Database changes | None |
 
-- Install via the **[Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") Plugin Directory** or see [INSTALL.md](../master/INSTALL.md)
-- Read the full [**Changelog**](../master/changelog.md "See changes") to see the latest updates
+Automated checks validate controller boundaries, generated tracking
+configuration, output encoding, translations, responsive presentation and the
+Kanboard 1.2.54 plugin boot. They do not replace authenticated browser
+acceptance against the intended Matomo deployment. Matomo 6 compatibility is
+not claimed while Matomo 6 remains outside the stable target.
 
-</details>
-<details>
-    <summary><strong>Compatibility</strong></summary>
+## Installation
 
-- Requires [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") ≥`1.2.20`
-- **Other Plugins & Action Plugins**
-  - _No known issues_
-- **Core Files & Templates**
-  - _No template overrides_
-  - _No database changes_
+See [INSTALL.md](INSTALL.md).
 
-</details>
-<details>
-    <summary><strong>Translations</strong></summary>
+## Translation
 
-- English (UK)
-- _Starter template available_
+- British English is complete.
+- [The starter catalogue](Locale/translations-starter-template.php) contains
+  the same ordered key set without emitting output before PHP starts.
 
-</details>
+## Security and privacy behaviour
 
-<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#usage">&#8592; Previous</a>] [<a href="#license">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
+- Only administrators can view or save settings.
+- Writes require POST and a valid Kanboard CSRF token.
+- Unknown configuration fields are rejected.
+- Stored values are validated and encoded for their JavaScript, HTML or URL
+  context.
+- Direct-mode CSP sources are derived from a validated, credential-free
+  HTTP(S) URL.
+- External links opened in a new window use `noopener` and `noreferrer`.
+- Do Not Track is respected before page-view tracking is queued.
 
-## Authors & Contributors
+Please report vulnerabilities privately rather than including secrets or live
+analytics URLs in a public issue.
 
-- [@aljawaid](https://github.com/aljawaid) - Author
-- _Contributors welcome_
+## Licence
 
-<p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#installation--compatibility">&#8592; Previous</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
-
-## License
-
-- This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")
-
----
-
-<p align="center">
-    <a href="https://github.com/aljawaid/MatomoConnector/stargazers" title="View Stargazers">
-        <img src="https://img.shields.io/github/stars/aljawaid/MatomoConnector?logo=github&style=flat-square" alt="MatomoConnector">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/forks" title="See Forks">
-        <img src="https://img.shields.io/github/forks/aljawaid/MatomoConnector?logo=github&style=flat-square" alt="MatomoConnector">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/blob/master/LICENSE" title="Read License">
-        <img src="https://img.shields.io/github/license/aljawaid/MatomoConnector?style=flat-square" alt="MatomoConnector">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/issues" title="Open Issues">
-        <img src="https://img.shields.io/github/issues-raw/aljawaid/MatomoConnector?style=flat-square" alt="MatomoConnector">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/issues?q=is%3Aissue+is%3Aclosed" title="Closed Issues">
-        <img src="https://img.shields.io/github/issues-closed/aljawaid/MatomoConnector?style=flat-square" alt="MatomoConnector">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/discussions" title="Read Discussions">
-        <img src="https://img.shields.io/github/discussions/aljawaid/MatomoConnector?style=flat-square" alt="MatomoConnector">
-    </a>
-    <a href="https://github.com/aljawaid/MatomoConnector/compare/" title="Latest Commits">
-        <img alt="GitHub commits since latest release (by date)" src="https://img.shields.io/github/commits-since/aljawaid/MatomoConnector/latest?style=flat-square">
-    </a>
-</p>
-<p align="right">[<a href="#user-content-readme-top">&#8593; Top</a>]</p>
-<a name="user-content-readme-bottom"></a>
+MatomoConnector is distributed under the [MIT Licence](LICENSE).

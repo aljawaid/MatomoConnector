@@ -55,6 +55,9 @@ jobs:
             php -l "$file"
           done < <(find plugin -type f -name '*.php' -print0)
 
+      - name: Check tracking JavaScript syntax
+        run: node --check plugin/Assets/js/matomo-connector.js
+
       - name: Install Kanboard dependencies
         run: composer install --working-dir=kanboard --no-dev --no-interaction --prefer-dist --no-progress --optimize-autoloader
 
@@ -86,3 +89,6 @@ jobs:
           }
           echo $pluginName." loaded on Kanboard ".APP_VERSION." with PHP ".PHP_VERSION.PHP_EOL;
           PHP
+
+      - name: Run focused regression checks
+        run: php -d error_reporting=E_ALL -d display_errors=1 plugin/tests/run.php "$GITHUB_WORKSPACE/kanboard"

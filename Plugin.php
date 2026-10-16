@@ -59,16 +59,13 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '2.5.0';
+        return '3.0.0';
     }
 
     public function getCompatibleVersion()
     {
-        // Examples:
-        // >=1.0.37
-        // <1.0.37
-        // <=1.0.37
-        return '>=1.2.20';
+        // The focused regression matrix targets the supported Kanboard baseline.
+        return '>=1.2.54';
     }
 
     public function getPluginHomepage()

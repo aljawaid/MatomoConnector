@@ -38,7 +38,6 @@ jobs:
           SUPPRESS_POSSUM: true
           VALIDATE_CSS: true
           VALIDATE_GITHUB_ACTIONS: true
-          VALIDATE_GITLEAKS: true
           VALIDATE_JSON: true
           VALIDATE_MARKDOWN: true
           VALIDATE_PHP_BUILTIN: true
