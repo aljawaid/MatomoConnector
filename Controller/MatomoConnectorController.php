@@ -15,8 +15,9 @@ use Kanboard\Core\Controller\AccessForbiddenException;
 class MatomoConnectorController extends BaseController
 {
     const DEFAULT_SETTINGS = array(
+        'matomo_tracking_mode' => 'disabled',
+        'matomo_transport_mode' => 'direct',
         'doc_title' => 'dont_prepend',
-        'apache_version' => 'dont_cloak',
         'image_tracking' => 'disable_image_tracking',
     );
 
@@ -24,9 +25,12 @@ class MatomoConnectorController extends BaseController
         'admin_website_name',
         'matomo_admin_url',
         'site_id',
+        'matomo_tracking_mode',
+        'matomo_transport_mode',
+        'matomo_first_party_script_path',
+        'matomo_first_party_endpoint_path',
         'domain',
         'doc_title',
-        'apache_version',
         'image_tracking',
         'website_page_name',
     );
@@ -43,10 +47,22 @@ class MatomoConnectorController extends BaseController
         if (empty($values)) {
             $values = $this->configModel->getAll();
         }
+
+        if (empty($values['matomo_tracking_mode'])) {
+            $values['matomo_tracking_mode'] = $this->helper->matomoConnector->getTrackingMode();
+        }
+
+        if (empty($values['matomo_transport_mode'])) {
+            $values['matomo_transport_mode'] = 'direct';
+        }
+
+        if (isset($values['image_tracking']) && $values['image_tracking'] === 'enable_image_tracking') {
+            $values['image_tracking'] = 'enable_image_tracking_js';
+        }
         $values = array_merge(self::DEFAULT_SETTINGS, $values);
 
         $this->response->html($this->helper->layout->config('matomoConnector:config/settings', array(
-            'plugins' => $this->pluginLoader->getPlugins(),
+            'plugin' => $this->pluginLoader->getPlugins()['MatomoConnector'],
             'title' => 'MatomoConnector &#10562; ' . t('Settings'),
             'values' => $values,
             'errors' => $errors,
@@ -114,44 +130,29 @@ class MatomoConnectorController extends BaseController
 
         $errors = array();
         $url = $normalised['matomo_admin_url'];
-        $urlParts = parse_url($url);
-        $scheme = strtolower((string) parse_url($url, PHP_URL_SCHEME));
+        $normalisedUrl = $this->helper->matomoConnector->normalizeAdminUrl($url);
+        $trackingEnabled = $normalised['matomo_tracking_mode'] !== 'disabled';
+        $directTracking = $normalised['matomo_transport_mode'] === 'direct';
 
-        if (
-            $url === ''
-            || filter_var($url, FILTER_VALIDATE_URL) === false
-            || !in_array($scheme, array('http', 'https'), true)
-            || !is_array($urlParts)
-            || empty($urlParts['host'])
-            || isset($urlParts['user'])
-            || isset($urlParts['pass'])
-            || isset($urlParts['query'])
-            || isset($urlParts['fragment'])
-        ) {
+        if (($url !== '' || ($trackingEnabled && $directTracking)) && $normalisedUrl === '') {
             $errors['matomo_admin_url'][] = t('Enter a valid Matomo URL beginning with http:// or https://.');
         } else {
-            $normalised['matomo_admin_url'] = rtrim($url, '/') . '/';
+            $normalised['matomo_admin_url'] = $normalisedUrl;
         }
 
-        if (
-            $normalised['site_id'] === ''
-            || !ctype_digit($normalised['site_id'])
-            || strlen($normalised['site_id']) > 10
-            || (int) $normalised['site_id'] < 1
-            || (int) $normalised['site_id'] > 2147483647
-        ) {
+        if (($normalised['site_id'] !== '' || $trackingEnabled) && !$this->helper->matomoConnector->isValidSiteId($normalised['site_id'])) {
             $errors['site_id'][] = t('Enter a positive numeric Matomo Site ID.');
         }
 
-        if ($normalised['domain'] !== '' && !$this->isValidDomain($normalised['domain'])) {
+        if ($normalised['domain'] !== '' && !$this->helper->matomoConnector->isValidDomain($normalised['domain'])) {
             $errors['domain'][] = t('Enter a valid domain name without a scheme, path, port or wildcard.');
         }
 
         $allowedChoices = array(
+            'matomo_tracking_mode' => array('disabled', 'cookieless', 'cookies'),
+            'matomo_transport_mode' => array('direct', 'first_party'),
             'doc_title' => array('prepend', 'dont_prepend'),
-            'apache_version' => array('cloak', 'dont_cloak'),
             'image_tracking' => array(
-                'enable_image_tracking',
                 'enable_image_tracking_js',
                 'disable_image_tracking',
             ),
@@ -163,6 +164,15 @@ class MatomoConnectorController extends BaseController
             }
         }
 
+        if ($normalised['matomo_transport_mode'] === 'first_party') {
+            foreach (array('matomo_first_party_script_path', 'matomo_first_party_endpoint_path') as $name) {
+                $pathRequired = $trackingEnabled || $normalised[$name] !== '';
+                if ($pathRequired && !$this->helper->matomoConnector->isValidFirstPartyPath($normalised[$name])) {
+                    $errors[$name][] = t('Enter a same-origin path beginning with one forward slash and without a query or fragment.');
+                }
+            }
+        }
+
         foreach (array('admin_website_name', 'website_page_name') as $name) {
             if (strlen($normalised[$name]) > 120) {
                 $errors[$name][] = t('Use no more than 120 characters.');
@@ -170,24 +180,6 @@ class MatomoConnectorController extends BaseController
         }
 
         return array(empty($errors), $normalised, $errors);
-    }
-
-    /**
-     * Accept a hostname only; Matomo adds the wildcard when configuring subdomain cookies.
-     *
-     * @param  string $domain
-     * @return bool
-     */
-    private function isValidDomain($domain)
-    {
-        if (strlen($domain) > 253 || strpos($domain, '..') !== false) {
-            return false;
-        }
-
-        return (bool) preg_match(
-            '/^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i',
-            $domain
-        );
     }
 
     /**
