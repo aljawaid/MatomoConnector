@@ -1,220 +1,349 @@
-/* KANBOARD PLUGIN - CSS FILE */
+/* MatomoConnector settings and integration presentation. */
 
-:root {
-    --pp-blue: #007AC9;
-    --pp-blue-alt: #00ADFF;
-    --pp-red: #B71234;
-    --pp-red-alt: #DA004C;
-    --pp-red-alt-2: #AE003D;
-    --pp-black: #000000;
-    --pp-light-grey: #8F8F8F;
-    --pp-grey: #4D4D4D;
-    --pp-white: #FFFFFF;
-    --pp-green: #2EA02E;
-    --pp-green-dark: #055D20;
-    --pp-orange: #FF6500;
-    --blue-icon-dark: #034CA6;
-    --link-color-primary: #3366CC;
-    --button-blue-gradient: linear-gradient(to bottom, #7892c2 80%, #476e9e 100%);
-    --blue-border-gradient-match: #476E9E;
-    --button-background-delete: #D05C84;
-    --header-page-margin-matomo: 5px 15px 10px 15px;
-    --page-margin-matomo: 0 15px 0 15px;
-    --title-margin-matomo: 0 15px 0 15px;
-    --panel-background-matomo: #EEEEEE;
-    --border-radius-matomo: 3px;
-    --transition-matomo: ease-in-out all .3s;
+.matomo-page,
+.matomo-connector {
+    --matomo-accent: var(--button-primary-background-color, #4D90FE);
+    --matomo-accent-border: var(--button-primary-border-color, #3079ED);
+    --matomo-surface: var(--panel-background-color, #FCFCFC);
+    --matomo-border: var(--panel-border-color, #DDDDDD);
+    --matomo-input-background: var(--input-background-color, #FFFFFF);
+    --matomo-input-border: var(--input-border-color, #CCCCCC);
+    --matomo-focus-border: var(--input-focus-border-color, rgb(82, 168, 236, .8));
+    --matomo-focus-shadow: var(--input-focus-shadow-color, rgb(82, 168, 236, .6));
+    --matomo-text: var(--color-primary, #333333);
+    --matomo-muted: var(--color-light, #767676);
+    --matomo-success: light-dark(#18733B, #77D892);
+    --matomo-warning: light-dark(#8A5700, #F0C36A);
+    --matomo-neutral: light-dark(#5B6470, #AAB4C0);
+    --matomo-notice-background: light-dark(#EDF5FF, #223447);
+    --matomo-warning-background: light-dark(#FFF6DB, #443817);
+    --matomo-radius: 6px;
+    --matomo-transition: 160ms ease-in-out;
+
+    color: var(--matomo-text);
 }
 
-.pp-blue { color: var(--pp-blue); fill: var(--pp-blue); }
-.pp-blue-alt { color: var(--pp-blue-alt); fill: var(--pp-blue-alt); }
-.pp-red { color: var(--pp-red); fill: var(--pp-red); }
-.pp-red-alt { color: var(--pp-red-alt); fill: var(--pp-red-alt); }
-.pp-red-alt-2 { color: var(--pp-red-alt-2); fill: var(--pp-red-alt-2); }
-.pp-black { color: var(--pp-black); fill: var(--pp-black); }
-.pp-light-grey { color: var(--pp-light-grey); fill: var(--pp-light-grey); }
-.pp-grey { color: var(--pp-grey); fill: var(--pp-grey); }
-.pp-white { color: var(--pp-white); fill: var(--pp-white); }
-.pp-green { color: var(--pp-green); fill: var(--pp-green); }
-.pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
-.pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
-
-.display-none, .d-none { display: none !important;}
-
-.font-weight-bold { font-weight: bold; }
-
-.text-center { text-align: center; }
-
-.relative { position: relative; }
-
-.page-margin {
-    margin: var(--page-margin-matomo);
+.matomo-page {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1040px;
+    padding: 0 15px;
 }
 
-.matomo-page-header h2 {
+.matomo-page *,
+.matomo-connector * {
+    box-sizing: border-box;
+}
+
+.matomo-page-header {
+    margin: 5px 15px 10px;
     text-align: center;
-    position: relative;
 }
 
-.back-button {
-    border-color: var(--blue-border-gradient-match);
-    margin-left: 10px;
+.matomo-page-header img {
+    height: auto;
+    max-width: min(280px, 90%);
 }
 
-.matomo-plugin-version {
-    display: block;
-    font-size: .9em;
-    text-align: center;
-    margin-top: 3em;
-    margin-bottom: 1.1em;
+.matomo-form {
+    background: var(--matomo-surface);
+    border-color: var(--matomo-border);
+    overflow: visible;
+    padding: clamp(12px, 2.5vw, 24px);
+}
+
+.matomo-section {
+    border: 1px solid var(--matomo-border);
+    border-radius: var(--matomo-radius);
+    margin: 0 0 20px;
+    padding: clamp(12px, 2vw, 20px);
+}
+
+.matomo-section legend {
+    color: var(--matomo-text);
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0 6px;
+}
+
+.matomo-field {
+    margin-bottom: 16px;
+}
+
+.matomo-field label {
+    color: var(--matomo-text);
+    font-weight: 600;
+}
+
+.matomo-field .matomo-optional {
+    color: var(--matomo-muted);
+    display: inline-block;
+    font-size: .8rem;
+    font-style: italic;
+    margin: 2px 0 4px;
+}
+
+.matomo-form input[type="url"].matomo-input,
+.matomo-form input[type="number"].matomo-input,
+.matomo-form input[type="text"].matomo-input {
+    appearance: none;
+    background-color: var(--matomo-input-background);
+    border: 1px solid var(--matomo-input-border);
+    border-radius: var(--matomo-radius);
+    color: var(--matomo-text);
+    font-size: 1rem;
+    height: 34px;
+    max-width: 100%;
+    padding: 4px 8px;
+    transition:
+        background-color var(--matomo-transition),
+        border-color var(--matomo-transition),
+        box-shadow var(--matomo-transition),
+        color var(--matomo-transition);
+    width: min(100%, 680px);
+}
+
+.matomo-form input[type="number"].matomo-input-small {
+    width: 150px;
+}
+
+.matomo-form input[type="url"].matomo-input:focus,
+.matomo-form input[type="number"].matomo-input:focus,
+.matomo-form input[type="text"].matomo-input:focus {
+    border-color: var(--matomo-focus-border);
+    box-shadow: 0 0 0 3px var(--matomo-focus-shadow);
+    outline: 0;
+}
+
+.matomo-choice-list {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+    margin: 8px 0 14px;
+    padding: 0;
+}
+
+.matomo-choice-list-inline {
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+.matomo-choice-list li {
+    background-color: var(--matomo-input-background);
+    border: 1px solid var(--matomo-border);
+    border-radius: var(--matomo-radius);
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px;
+    transition:
+        background-color var(--matomo-transition),
+        border-color var(--matomo-transition),
+        box-shadow var(--matomo-transition);
+}
+
+.matomo-choice-list li:focus-within,
+.matomo-choice-list li:hover {
+    border-color: var(--matomo-accent-border);
+    box-shadow: 0 2px 8px rgb(0, 0, 0, .12);
+}
+
+.matomo-choice-list label {
+    color: var(--matomo-text);
+    font-weight: 600;
+    margin: 0;
+}
+
+.matomo-choice-list .form-help {
+    margin: 5px 0 0 24px;
+}
+
+.matomo-notice,
+.matomo-warning {
+    border-left: 4px solid var(--matomo-accent);
+    border-radius: 0 var(--matomo-radius) var(--matomo-radius) 0;
+    margin: 12px 0;
+    padding: 10px 12px;
+}
+
+.matomo-notice {
+    background: var(--matomo-notice-background);
+}
+
+.matomo-warning {
+    background: var(--matomo-warning-background);
+    border-left-color: var(--matomo-warning);
+}
+
+.matomo-routing-grid {
+    display: grid;
+    gap: 0 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.matomo-guidance {
+    border: 1px solid var(--matomo-border);
+    border-radius: var(--matomo-radius);
+    margin-top: 8px;
+    padding: 10px 12px;
+}
+
+.matomo-guidance summary {
+    color: var(--link-color-primary, #3366CC);
+    cursor: pointer;
+    font-weight: 600;
+    transition: color var(--matomo-transition);
+}
+
+.matomo-guidance summary:focus,
+.matomo-guidance summary:hover {
+    color: var(--link-color-hover, #333333);
+}
+
+.matomo-guidance p {
+    margin: 10px 0 0;
+}
+
+.matomo-buttons,
+.matomo-actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .matomo-plugin-version a {
     font-weight: 600;
 }
 
-.matomo-plugin-version span {
-    background-color: var(--pp-green-dark);
-    padding: 1px 4px 1px 4px;
-    color: var(--pp-white);
-    border-radius: var(--border-radius-matomo);
-    font-family: monospace;
-    margin-left: 3px;
-    font-size: 1em;
-    cursor: context-menu;
+.matomo-buttons a,
+.matomo-actions .btn {
+    border-radius: var(--matomo-radius);
+    margin: 0;
+    transition:
+        background-color var(--matomo-transition),
+        border-color var(--matomo-transition),
+        box-shadow var(--matomo-transition),
+        color var(--matomo-transition),
+        transform var(--matomo-transition);
 }
 
-.matomo-image-tracking ul {
-    display: flex;
+.matomo-buttons a:focus,
+.matomo-buttons a:hover,
+.matomo-actions .btn:focus,
+.matomo-actions .btn:hover {
+    box-shadow: 0 2px 8px rgb(0, 0, 0, .18);
+    transform: translateY(-1px);
 }
 
-.matomo-image-tracking ul li {
-    list-style-type: none;
-    display: inline-flex;
-    flex: 1;
-    justify-content: space-evenly;
+.matomo-buttons img {
+    height: 1em;
+    vertical-align: -.12em;
+    width: 1em;
 }
 
-.matomo-tracking ul li {
-    list-style-type: none;
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 30px;
-}
-
-.matomo-image-tracking .matomo-form-help {
-    text-align: center;
-    margin-top: 5px;
-}
-
-.w-600 {
-    width: 600px;
-}
-
-.mt-4 {
-    margin-top: 4px;
-}
-
-.apache-title {
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
-.bypass {
-    margin-top: 15px;
-}
-
-.bypass summary {
-    margin-bottom: 10px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.bypass p {
-    margin: 10px auto;
-}
-
-.source-info {
-    text-align: right;
-    font-size: .8rem;
-    margin-bottom: 0;
-}
-
-code.htaccess {
+.matomo-plugin-version {
+    color: var(--matomo-muted);
     display: block;
-    border-radius: var(--border-radius-matomo);
-    width: fit-content;
-    letter-spacing: 1px;
-    background-color: rgb(27, 31, 35, .22);
+    font-size: .9rem;
+    margin: 28px 0 6px;
+    text-align: center;
 }
 
-.matomo-form input[type="url"], .matomo-form input[type="number"], .matomo-form input[type="text"]:not(.input-addon-field) {
-    border: 1px solid var(--blue-border-gradient-match);
-    max-width: 95%;
-    font-size: 1em;
-    height: 25px;
-    padding-bottom: 0;
-    padding-left: 4px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-radius: var(--border-radius-matomo);
-
+.matomo-plugin-version span {
+    background-color: var(--matomo-success);
+    border-radius: var(--matomo-radius);
+    color: light-dark(#FFFFFF, #102318);
+    cursor: context-menu;
+    font-family: monospace;
+    font-size: .9rem;
+    margin-left: 3px;
+    padding: 2px 5px;
 }
 
-.matomo-form input[type="url"]:focus, .matomo-form input[type="number"]:focus, .matomo-form input[type="text"]:focus:not(.input-addon-field) {
-    accent-color: var(--pp-red-alt-2);
-    outline: 0;
-    box-shadow: 0 0 8px var(--blue-icon-dark);
+.matomo-connector {
+    padding: 12px 14px;
 }
 
-.matomo-buttons a {
-    font-size: 1em;
-    border-color: var(--blue-border-gradient-match);
-    border-radius: var(--border-radius-matomo);
-    margin-right: 10px;
-}
-
-.matomo-form .form-actions .btn {
-    border-radius: var(--border-radius-matomo);
+.matomo-connector-summary {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    justify-content: space-between;
 }
 
 .matomo-connector h4 {
-    margin-top: 0;
-}
-
-.matomo-connector a {
-    font-size: 1em;
-}
-
-.optional {
-    font-size: .8em;
-    font-style: italic;
-    margin-left: 5px;
-    color: var(--pp-grey);
-}
-
-.optional-label::after {
-    content: 'Optional';
-    font-size: .8em;
-    font-style: italic;
-    margin-left: 5px;
-    color: var(--pp-grey);
-}
-
-.matomo-admin-interface legend, .matomo-tracking legend, .matomo-image-tracking legend {
-    font-weight: 600;
+    margin: 0 0 5px;
 }
 
 .matomo-connector .connection-indicator {
-    margin-right: 20px;
-    display: inline-block;
+    margin: 0;
 }
 
-.matomo-connector .connection-indicator span {
-    font-size: 1.1em;
+.matomo-status-success {
+    color: var(--matomo-success);
 }
 
-.matomo-connector .matomo-buttons {
-    display: inline-block;
+.matomo-status-warning {
+    color: var(--matomo-warning);
+}
+
+.matomo-status-neutral {
+    color: var(--matomo-neutral);
+}
+
+.matomo-tracking-pixel {
+    border: 0;
+    height: 1px;
+    position: absolute;
+    width: 1px;
+}
+
+@media (width <= 700px) {
+    .matomo-page {
+        padding: 0;
+    }
+
+    .matomo-routing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .matomo-buttons,
+    .matomo-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .matomo-buttons .btn,
+    .matomo-actions .btn {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .matomo-connector-summary {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+@media (width <= 480px) {
+    .matomo-form {
+        padding: 10px;
+    }
+
+    .matomo-section {
+        padding: 10px;
+    }
+
+    .matomo-choice-list .form-help {
+        margin-left: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .matomo-page *,
+    .matomo-connector * {
+        scroll-behavior: auto;
+        transition-duration: 0.01ms;
+    }
 }
