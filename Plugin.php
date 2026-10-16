@@ -3,8 +3,8 @@
 namespace Kanboard\Plugin\MatomoConnector;
 
 use Kanboard\Core\Plugin\Base;
+use Kanboard\Core\Security\Role;
 use Kanboard\Core\Translator;
-use Kanboard\Helper;
 
 class Plugin extends Base
 {
@@ -23,6 +23,10 @@ class Plugin extends Base
 
         // MATOMO SETTINGS Page - Routes
         $this->route->addRoute('/settings/matomo', 'MatomoConnectorController', 'show', 'MatomoConnector');
+
+        // Matomo connection details control site-wide tracking and are restricted to administrators.
+        // The defence-in-depth controller checks are covered by tests/SecurityBoundaryTest.php.
+        $this->applicationAccessMap->add('MatomoConnectorController', '*', Role::APP_ADMIN);
     }
 
     public function onStartup()

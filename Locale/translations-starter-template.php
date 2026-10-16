@@ -17,6 +17,11 @@ return array(
     'Settings' => '',
     'Settings saved successfully.' => '',
     'Unable to save your settings.' => '',
+    'Enter a valid Matomo URL beginning with http:// or https://.' => '',
+    'Enter a positive numeric Matomo Site ID.' => '',
+    'Enter a valid domain name without a scheme, path, port or wildcard.' => '',
+    'Select one of the available options.' => '',
+    'Use no more than 120 characters.' => '',
     //
     // config/integrations.php
     //

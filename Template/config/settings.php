@@ -1,10 +1,26 @@
+<?php
+$matomoAdminUrl = trim($this->task->configModel->get('matomo_admin_url', ''));
+$matomoUrlParts = parse_url($matomoAdminUrl);
+$matomoScheme = strtolower((string) parse_url($matomoAdminUrl, PHP_URL_SCHEME));
+$matomoAdminUrl = filter_var($matomoAdminUrl, FILTER_VALIDATE_URL) !== false
+    && in_array($matomoScheme, array('http', 'https'), true)
+    && is_array($matomoUrlParts)
+    && !empty($matomoUrlParts['host'])
+    && !isset($matomoUrlParts['user'])
+    && !isset($matomoUrlParts['pass'])
+    && !isset($matomoUrlParts['query'])
+    && !isset($matomoUrlParts['fragment'])
+    ? $matomoAdminUrl
+    : '';
+$matomoAdminName = $this->task->configModel->get('admin_website_name', '');
+?>
 <div class="matomo-page-header">
     <h2 class="">
         <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-logo.svg" alt="<?= t('Matomo logo') ?>">
     </h2>
 </div>
 <div class="page-margin">
-    <form class="matomo-form panel" method="post" action="<?= $this->url->href('MatomoConnectorController', 'save', array('redirect' => 'show', 'plugin' => 'MatomoConnector')) ?>" autocomplete="off">
+    <form class="matomo-form panel" method="post" action="<?= $this->url->href('MatomoConnectorController', 'save', array('plugin' => 'MatomoConnector')) ?>" autocomplete="off">
     <?= $this->form->csrf() ?>
         <fieldset class="matomo-admin-interface">
             <legend><?= t('Admin Interface') ?></legend>
@@ -19,9 +35,9 @@
                 <p class="form-help w-600"><?= t('Enter the complete URL to your Matomo interface with the trailing slash (or without the trailing slash if using the Apache version)') ?></p>
             </div>
             <div class="matomo-buttons">
-                <?php if (!empty($this->task->configModel->get('matomo_admin_url'))): ?>
-                    <a href="<?= $this->task->configModel->get('matomo_admin_url', '') ?>" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
-                        <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?php if (!empty($this->task->configModel->get('admin_website_name'))): ?> <?= $this->task->configModel->get('admin_website_name') ?><?php else: ?> <?= t('Matomo Admin Login') ?> <?php endif ?>
+                <?php if ($matomoAdminUrl !== ''): ?>
+                    <a href="<?= $this->text->e($matomoAdminUrl) ?>" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
+                        <img src="<?= $this->url->dir() ?>plugins/MatomoConnector/Assets/matomo-icon.svg" alt="<?= t('Matomo icon') ?>"> <?php if ($matomoAdminName !== ''): ?> <?= $this->text->e($matomoAdminName) ?><?php else: ?> <?= t('Matomo Admin Login') ?> <?php endif ?>
                     </a>
                 <?php endif ?>
                 <a href="https://matomo.org/guides" class="btn" rel="noreferrer noopener" target="_blank" title="<?= t('Opens in a new window') ?>">
@@ -42,7 +58,7 @@
             <div class="">
                 <?= $this->form->label(t('Track Across All Subdomains'), 'domain', array('class="w-200"')) ?>
                 <?= $this->form->text('domain', $values, $errors, array('placeholder="' . t('Enter your domain') . '"')) ?>
-                <p class="form-help mt-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $_SERVER['HTTP_HOST'] ?></code></p>
+                <p class="form-help mt-4"><?= t('Your Kanboard domain is detected as') ?> <code><?= $this->text->e(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '') ?></code></p>
             </div>
             <div class="">
                 <ul class="">
@@ -114,9 +130,9 @@
         $pluginVersion = $plugins[$pluginName]->getPluginVersion();
         $pluginHomepage = $plugins[$pluginName]->getPluginHomepage();
         ?>
-        <a href="<?= $pluginHomepage ?>" class="" target="_blank" rel="noreferrer noopener" title="<?= t('Opens in a new window') ?>">
-            <?= $pluginName ?>
+        <a href="<?= $this->text->e($pluginHomepage) ?>" class="" target="_blank" rel="noreferrer noopener" title="<?= t('Opens in a new window') ?>">
+            <?= $this->text->e($pluginName) ?>
         </a> <?= t('Connector') ?>
-        <span>v<?= $pluginVersion ?></span>
+        <span>v<?= $this->text->e($pluginVersion) ?></span>
     </footer>
 </div>
