@@ -1,28 +1,13 @@
 # Changelog
 
-## 3.0.0
+## v3.0.0
 
-- SECURITY FIX: Restricted every MatomoConnector controller action to
-  administrators and removed inherited core configuration actions.
-- SECURITY FIX: Added POST, CSRF, exact field allowlisting, server-side
-  validation and context-safe output encoding.
-- NEW: Added disabled, privacy-enhanced cookieless and cookie-based tracking modes.
-- NEW: Added CSP-compatible local JavaScript bootstrap and validated
-  first-party tracker routing.
-- FIX: Respected browser Do Not Track and requested secure Matomo cookies on
-  HTTPS pages.
-- FIX: Converted legacy always-on image tracking to a no-JavaScript fallback
-  to prevent duplicate page views.
-- FIX: Added responsive, theme-aware settings with explicit smooth transitions
-  and reduced-motion support.
-- FIX: Completed and aligned the British English and starter translation
-  catalogues.
-- FIX: Raised the supported baseline to Kanboard 1.2.54 and added PHP 8.2 to
-  8.5 regression coverage.
-- DOCS: Added privacy limits, first-party routing, upgrade guidance and
-  production acceptance checks.
-- No database changes.
-- Historical release archives are unchanged.
+- FIX: Update Matomo Connector Compatibility And Release Guidance
+- FIX: Improve Matomo Connector Responsive Presentation
+- NEW: Add Privacy-Aware Matomo Tracking
+- SECURITY FIX: Protect Matomo Connector Settings
+- FIX: Add MatomoConnector CSS Validation
+- FIX: README Navigation Links for GitHub
 
 ## 2.5
 
