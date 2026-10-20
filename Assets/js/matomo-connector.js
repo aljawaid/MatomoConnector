@@ -16,7 +16,7 @@
 
     try {
         config = JSON.parse(configElement.getAttribute('content'));
-    } catch (error) {
+    } catch {
         return;
     }
 
